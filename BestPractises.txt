@@ -1,0 +1,18 @@
+Magic Numbers - better to init var with meaningful name than just write it directly
+Example: 
+const SECONDS_IN_DAY = 86400
+Now we easily can guess why we choose this Numbers
+-------------------------------------------------------
+
+Deep Nesting
+If we want to retrieve value from nested array, it might not be a good idea to loop through all arrays with forEchc
+Instead we can do arrow func, that can check if argument is array and recursively call itself with argumeny[0] while
+element will not be array. Then just return value
+Example: array -> retrieveValueNested.just
+-------------------------------------------------------
+
+Stop writing too much comments - CODE MUST BE SIMPLE AND PLAIN!!!
+
+-------------------------------------------------------
+
+Avoid to write too large functions, better to separate logic into smaller
