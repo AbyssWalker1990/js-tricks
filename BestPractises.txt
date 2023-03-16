@@ -12,7 +12,17 @@ Example: array -> retrieveValueNested.just
 -------------------------------------------------------
 
 Stop writing too much comments - CODE MUST BE SIMPLE AND PLAIN!!!
-
 -------------------------------------------------------
 
 Avoid to write too large functions, better to separate logic into smaller
+Example: functions -> tooLargeFunction.js
+-------------------------------------------------------
+
+Code repetion. Maybe the better way is to write function to a code block that we must copy-paste
+Also we MUST use object and array destructuring when we need to retrieve direct data to avoid repetitions
+-------------------------------------------------------
+
+Good practice is to use camel case and meaningful names for naming variables, functions etc.
+Use pascal case for naming class and snake upper case for constant
+Avoid one-letter variable names
+-----------------------------------------------------------------------------------------
