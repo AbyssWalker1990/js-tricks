@@ -9,3 +9,5 @@
 3. V8 engine and how js works in browser and local machine with node js 
 4. Showing examples with REPL node js and console directly in browser
 5. Few words about how works app applications and layears of apps 
+6. Explain about NVM and js versions
+7. Gracefull degradation and Progressive enchacemnet
