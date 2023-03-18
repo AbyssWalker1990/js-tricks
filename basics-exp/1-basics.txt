@@ -1,0 +1,11 @@
+1. What is js and short history
+  - Comparison of high-level programming languages wit low
+  - Few words about compilation and interpretator
+  - ECMA scripts standarts
+  - Dynamic types 
+  - Prototyped based object orientation
+  - First class functions
+2. Browser wars and few words about internet evolving
+3. V8 engine and how js works in browser and local machine with node js 
+4. Showing examples with REPL node js and console directly in browser
+5. Few words about how works app applications and layears of apps 

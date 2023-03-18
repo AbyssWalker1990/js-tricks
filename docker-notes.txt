@@ -1,0 +1,36 @@
+Why it helpful:
+- Reduce steps for installing environment and services for project on each local machine
+- Much easier to deploy and make no conflicts with many services that running in the same host
+
+What is container:
+- Layers of images
+- Linux base image (most popular because of small size)
+- Application image on top
+
+Difference of images and containers:
+  Image is an actual package, that can be moved. Image is not running
+  Container actually STARTS app and create environment. App is running 
+  Container si a running environment for image
+
+Docker vs Virtual machine
+1. Docker using own application layer only, VM using OWN OS kernel layer ad app layer together
+2. Docker image is much SMALLER
+3. Docker containers starts much faster 
+4. VM can be run on any OS, docker hasnt this compatibility. For example we can encounter problems with
+linux based images on Windows machine
+
+BASIC COMMANDS:
+  docker ps // List of running containers
+  docker pull name_of_image // Pulling latest version of image
+  docker run name_of_image  // Runs container with this image
+  docker run -d name_of_image // Starts container in detached mode and give id
+  docker stop id_container  // Stops container
+  docker start id_container // Starts container with id
+  docker ps -a // Shows history of started and stopped containers and their id
+  docker run -p6000:6379 name_of_image // Runs container and binding local PORT 6000 to port 6379 of image
+
+
+
+
+
+
