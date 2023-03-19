@@ -20,14 +20,49 @@ Docker vs Virtual machine
 linux based images on Windows machine
 
 BASIC COMMANDS:
+  INFO: 
+  docker images // List of local images
   docker ps // List of running containers
+  docker ps -a // Shows history of started and stopped containers and their id
+
+  CONTAINERS AND IMAGES MANIPULATIONS:
   docker pull name_of_image // Pulling latest version of image
   docker run name_of_image  // Runs container with this image
   docker run -d name_of_image // Starts container in detached mode and give id
   docker stop id_container  // Stops container
   docker start id_container // Starts container with id
-  docker ps -a // Shows history of started and stopped containers and their id
   docker run -p6000:6379 name_of_image // Runs container and binding local PORT 6000 to port 6379 of image
+  docker run --name my_name_of_container // Set the name
+
+  DEBUG:
+  docker logs id_container || name_container // Print out the logs
+  docker exec -it id_container /bin/bash // Open interactive terminal, where we can navigate along files and check env. // exit 
+  docker logs id_container -- tail 5 // Print out 5 last rows FOR WINDOWS
+  docker logs id_container | tail // for LINUX
+  docker logs id_container -f //  Stream logs 
+
+
+  NETWORKS:
+  docker network ls // Prin out all networks
+  docker network create name_network // Creates network 
+  docker run --net name_network // Specify network for container
+
+  EXAMPLES:
+  docker run -p 27017:27017 -d \
+    -e MONGO_INITDB_ROOT_USERNAME=admin \ 
+    -e MONGO_INITDB_ROOT_PASSWORD=password \
+    --name mongodb --net mongo-network mongo // Runs container with mongo in detached mode with 27017 port using mongo-networks. 
+    Name of container willbe mongodb and username and password for root will be 'admin' and 'password'
+  
+  docker run -d \  // Detached mode
+  -p 8081:8081 \   // Specify port
+  -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin \   // env variable
+  -e ME_CONFIG_MONGODB_ADMINPASSWORD=password \   // env variable
+  --net mongo-network \  // Choosing network
+  --name mongo-express \  // Specify name of container
+  -e ME_CONFIG_MONGODB_SERVER=mongodb \   // env variable
+  mongo-express
+
 
 
 
