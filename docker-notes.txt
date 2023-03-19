@@ -47,6 +47,10 @@ BASIC COMMANDS:
   docker network create name_network // Creates network 
   docker run --net name_network // Specify network for container
 
+  COMPOSE:
+  docker-compose -f docker-compose.yaml run  // Starts containers in own network with conf in yaml file
+  docker-compose -f docker-compose.yaml down  // Shut down containers
+
   EXAMPLES:
   docker run -p 27017:27017 -d \
     -e MONGO_INITDB_ROOT_USERNAME=admin \ 
