@@ -1,0 +1,14 @@
+1. String, literals, constructor functions
+2. Escaping symbols
+3. String properties and methods
+4. Template literals
+5. Symbol
+6. Numbers
+7. Binary, Hexidecimal etc ...
+8. Exponential notation
+9. Number methods
+10. Arithmetic operations
+11. NaN
+12. Increment, Decrement
+13. Infinity
+14. Check if Nubmber?
