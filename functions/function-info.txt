@@ -1,0 +1,15 @@
+Function is an OBJECT
+Ways to create:
+  - Function Declaration and Expressions
+  - Arrow functions
+  - Function constructors
+  - Generator functions
+-----------------------------------------
+Function declaration:
+function funkName() {}
+
+Function Expression:
+const func = function () {}
+// The difference between these methods is that we must give name to func when declare it. For Expression
+this is optional,  but it can be used for recursion.
+Also Declaration can be invoked before declaring func, Expressions cant!
