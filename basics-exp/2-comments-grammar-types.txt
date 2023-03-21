@@ -1,0 +1,8 @@
+1. Show roadmap
+2. Comments, syntax, how and why we can yse it?
+3. Base of js grammar
+4. Reserved words
+5. Primitive types
+6. Variable, declaring and assigning
+7. Scopes
+8. Direct assigning and assigning by reference
