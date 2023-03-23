@@ -1,0 +1,7 @@
+'this' can be defined: 
+1. The global object
+2. As a method within the object
+3. As a constructor on a function or class
+4. As a DOM event handler
+
+In DOM event handler this will be refer to object that invoke listener method
