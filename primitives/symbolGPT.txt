@@ -1,0 +1,101 @@
+In JavaScript, a symbol is a primitive data type used to create unique identifiers. A symbol is a unique and immutable value that can be used as an object property identifier. Symbols are created using the Symbol() function, which returns a new unique symbol value every time it is called.
+
+Here is an example of how to create a new symbol:
+
+javascript
+Copy code
+const mySymbol = Symbol();
+You can also provide a description for the symbol, which can be useful for debugging:
+
+javascript
+Copy code
+const mySymbol = Symbol('My Symbol Description');
+Symbols can be used as keys for object properties. Here's an example:
+
+javascript
+Copy code
+const mySymbol = Symbol('My Symbol Description');
+const myObj = {};
+
+myObj[mySymbol] = 'Hello World';
+
+console.log(myObj[mySymbol]); // Output: "Hello World"
+One of the main benefits of symbols is that they provide a way to create "private" properties on objects. Because symbol values are unique, they are difficult to access from outside the object. Here's an example:
+
+javascript
+Copy code
+const mySymbol = Symbol('My Symbol Description');
+const myObj = {};
+
+myObj[mySymbol] = 'Hello World';
+
+// This will not work because the symbol value is not known:
+console.log(myObj[Symbol('My Symbol Description')]); // Output: undefined
+Overall, symbols are a powerful and useful addition to the JavaScript language, and can be used to create unique identifiers and private object properties.
+
+
+--------------------------------------------------------------------------------
+
+javascript
+Copy code
+const RED = Symbol('Red');
+const BLUE = Symbol('Blue');
+const GREEN = Symbol('Green');
+
+const car = {
+  make: 'Ford',
+  model: 'Mustang',
+  [RED]: 200,
+  [BLUE]: 100,
+  [GREEN]: 50
+};
+
+console.log(car[RED]); // Output: 200
+In this example, we've created three unique symbol values: RED, BLUE, and GREEN. We then use these symbols as keys for object properties on a car object.
+
+By using symbols as property keys, we can avoid naming collisions with other properties or methods that might be added to the car object in the future. It also makes the code more readable and easier to understand, since the meaning of each property is clearly defined by its symbol.
+
+Another advantage of using symbols as property keys is that they are not enumerable, which means they will not show up in for...in loops or Object.keys() calls. This can be useful for creating hidden or internal properties on objects that should not be exposed to external code.
+
+javascript
+Copy code
+console.log(Object.keys(car)); // Output: ["make", "model"]
+In this example, the RED, BLUE, and GREEN properties are not included in the output of Object.keys(car), since they are defined using symbols.
+
+Overall, symbols can be a powerful tool for creating unique identifiers and private properties in JavaScript objects.
+
+--------------------------------------------------------------------
+
+Sure, here's an example of how symbols can be used to create private properties in JavaScript objects:
+
+javascript
+Copy code
+const person = {
+  name: 'John Smith',
+  age: 30,
+  [Symbol('password')]: '1234'
+};
+
+console.log(person.name); // Output: "John Smith"
+console.log(person.age); // Output: 30
+
+// This will not work because the password property is private:
+console.log(person.password); // Output: undefined
+In this example, we've created a JavaScript object called person. The object has three properties: name, age, and a private property called password which is created using a symbol.
+
+Because the password property is created using a symbol, it is not easily accessible from outside the object. This makes it a great way to create private properties on objects.
+
+In this example, we can access the name and age properties of the person object using dot notation, but we cannot access the password property directly. If we try to access it using dot notation, we'll get undefined.
+
+javascript
+Copy code
+console.log(person.password); // Output: undefined
+Of course, we could still access the password property by using the Object.getOwnPropertySymbols() method, which returns an array of all symbol properties on an object. However, this requires explicit effort and is less likely to happen accidentally.
+
+Here's an example of how we can use the Object.getOwnPropertySymbols() method to access the private password property:
+
+javascript
+Copy code
+const symbols = Object.getOwnPropertySymbols(person);
+console.log(person[symbols[0]]); // Output: "1234"
+Note that this method returns an array of all symbol properties on an object, so we need to use array indexing to access the private password property.

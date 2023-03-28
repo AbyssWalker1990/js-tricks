@@ -33,6 +33,10 @@ BASIC COMMANDS:
   docker start id_container // Starts container with id
   docker run -p6000:6379 name_of_image // Runs container and binding local PORT 6000 to port 6379 of image
   docker run --name my_name_of_container // Set the name
+  docker build -t my-app:1.0 .  // Buil image with name my-app:1.0 with Dockerfile in the same directory as cmd
+  docker rm id_container  // Delete container
+  docker rmi id_image   // Delete image
+
 
   DEBUG:
   docker logs id_container || name_container // Print out the logs
