@@ -13,3 +13,31 @@ const func = function () {}
 // The difference between these methods is that we must give name to func when declare it. For Expression
 this is optional,  but it can be used for recursion.
 Also Declaration can be invoked before declaring func, Expressions cant!
+
+-------------------------------------------
+
+High Order functions
+Is a Functions that uses oyher function is an argument
+Example: map() is a built-in High order func 
+This type of functions are dynamic and reusable
+
+-------------------------------------------
+
+Pure funnctions are the functions that always produces the same results with same arguments
+and have no side effects
+
+-------------------------------------------
+
+Recursive function - func that calls itself inside body and responsible for stopping itself
+
+-------------------------------------------
+
+Closures are functions that are bundled tohether with a lexical environment within wich that
+function was declared. Child function have access to a lexical scope of parent function EVEN 
+if parentfunc is closed! Closure is created when we define function, not when we calling.
+
+-------------------------------------------
+
+IIFE - immidiately invoked function Expression
+Can be anonymous arrow, function keyword use and named(for example to use with recursion).
+DONT POLLUTE GLOBAL ENVIRONMENT

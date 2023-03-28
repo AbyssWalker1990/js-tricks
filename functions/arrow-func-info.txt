@@ -1,0 +1,9 @@
+Arrow function is the better way to write function expressions
+Arrow func is always Anonymous
+have improved syntax, can be declared without parenthesis with 1 argument, and can return value in 1 line
+without necessary of using return keyword and even remove curly braces in body
+
+The main difference: Arrow function doesnt have her own 'this' keyword.
+This refers to lexical environment
+
+Arrow function in object will have this that refers not to the object, but to window

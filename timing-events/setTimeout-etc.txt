@@ -1,0 +1,1 @@
+setTimeout can take arguments for callback fumctions after miliseconds
