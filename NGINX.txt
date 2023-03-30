@@ -1,0 +1,24 @@
+NGINX is a reverse proxy between client and server
+Main reasons to use:
+  - Load balancer - can choose not so loaded server for processing data
+  - Encryption - can encrypt and decrypt with ssl, that really important for big applications,
+    because it reduces work of different servers for these operations
+---------------------------------------------------------------
+After installing the main file that we will use be: 
+  nginx.conf
+To start nginx - simply type:
+nginx
+Will be availaible on http://localhost:8080
+---------------------------------------------------------------
+TERMINOLOGY:
+nginx.conf includes many directives:
+  worker_processes  1;    // directive
+
+and also with context
+events {   // context block  // directive inside
+    worker_connections  1024;
+}
+---------------------------------------------------------------
+SERVING STATIC CONTENT:
+Working with nginx.conf
+

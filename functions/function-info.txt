@@ -41,3 +41,8 @@ if parentfunc is closed! Closure is created when we define function, not when we
 IIFE - immidiately invoked function Expression
 Can be anonymous arrow, function keyword use and named(for example to use with recursion).
 DONT POLLUTE GLOBAL ENVIRONMENT
+
+------------------------------------------
+
+Memoization
+Must be provided only to PURE functions
