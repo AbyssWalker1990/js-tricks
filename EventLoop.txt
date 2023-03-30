@@ -1,0 +1,15 @@
+Call Stack - tracker of execution of program
+1. Node wrapping all our code in anonymous functionn that refers to main
+2. Main function pushes to bottom of Call Stack
+3. If we have another func in script (for example console.log) - it pushes to Call Stack above main func
+and deletes from stack when it executed
+4. If we have func, that calls another func - functions will be pushing above to top and top function will be
+executed first
+--------------------------------
+With async functions (example setTimeout())
+1. Also wrapping all script in main func
+2. Called async func go to Node APIs, not to call stack
+3. While this async func trying to get result, another js code can be executed
+4. When async event done - it moves to Callback Queue
+5. After this Event Loop looks at Call Stack and Callback Queue
+6. Functions from Call Stack WILL BE EXECUTED FIRST!
