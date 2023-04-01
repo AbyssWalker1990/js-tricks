@@ -8,6 +8,8 @@ fetch('http://jsonplaceholder.typicode.com/users')
     return response.json()
   })
   .then(data => {
-    console.table(data)
+    data.forEach(user => {
+      console.log(user.name)
+    })
   })
 
