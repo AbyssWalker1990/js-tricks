@@ -24,3 +24,4 @@ There are difference between browser and node js:
   close callbacks, the ones scheduled by timers, and setImmediate)
   - check: setImmediate() callbacks are invoked here
   - close callbacks: some close callbacks
+3. Node js has more than 1 callback queue, instead - many queues for all phases
