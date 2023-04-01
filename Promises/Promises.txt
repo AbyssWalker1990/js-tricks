@@ -1,1 +1,5 @@
 Have 3 states: Pending, Fullfilled, Rejected
+To get value from Promise - not enough to assign it to new variable
+Thenables - is the old way to get result
+
+18:58
