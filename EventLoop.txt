@@ -13,3 +13,14 @@ With async functions (example setTimeout())
 4. When async event done - it moves to Callback Queue
 5. After this Event Loop looks at Call Stack and Callback Queue
 6. Functions from Call Stack WILL BE EXECUTED FIRST!
+---------------------------------
+There are difference between browser and node js:
+1. setImmediate() - method of node js
+2. Node js have loop with phases:
+  - Timers: executes callbacks schediled by setTimeout and setInterval
+  - pending callbacks: executes I/O callbacks deferred to next loop iteration
+  - idle, prepeare: only used internally
+  - poll: retrieve new I/O events, executes almost all related callbacks(exception of
+  close callbacks, the ones scheduled by timers, and setImmediate)
+  - check: setImmediate() callbacks are invoked here
+  - close callbacks: some close callbacks
