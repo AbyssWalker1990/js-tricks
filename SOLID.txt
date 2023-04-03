@@ -1,0 +1,31 @@
+SOLID
+
+1. Single responsibility principle 
+Every module or class should have responsibility over a single part of the functionality
+provided by the software, and that responsibility should be entirely encapsulated
+by the class. All its services should be narrowly aligned with that responsibility
+"A CLASS SHOULD HAVE ONE REASON TO CHANGE"
+-------------------------------------------------
+2. Open/Closed principle
+Software entities (classes, modules, functions etc.) should be open for extension,
+but closed for modification
+If something works fine - we dont need to change it, instead we can extend this with
+inheritance
+-------------------------------------------------
+3. Liskov substitution principle
+It says about inheritance. When we try to extend classes we must think.
+Object of superclass must be replaceable with object of its subclasses and dont break the app
+The overridden method of a subclass needs to accept same parameters values as the method
+of superclass. That means we can implement less restrictive validation rules, but not allowed
+to enforce stricter ones in our subclass(it can cause exception when we try to call 
+superclass method with object of its subclass)
+BEHAVIOR BECOMES MORE IMPORTANT THAN STRUCTURE
+------------------------------------------------
+4. Interface segregation
+No client should be forced to depend on methods it does not use. We must splits interfaces 
+that are really large into smaller and more specific ones so that clients will only have 
+to know about the methods that are of interest to them
+------------------------------------------------ 
+5. Dependency inversion principle
+High-level modules should not depend on low-level modules
+Both should depend on abstractions
