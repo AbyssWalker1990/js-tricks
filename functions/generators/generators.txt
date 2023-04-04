@@ -1,0 +1,18 @@
+Generator is a type of iterator
+Has a next() method that returns {value, done}
+---------------------------------
+Example: 
+someIterator.next()
+// { value: 'something', done: false}
+
+---------------------------------
+Generator functions returns generator objects
+Example: simpleGenFunc.js
+---------------------------------
+
+.next() - advances, yield - pauses, return - stops
+Example: genWorkflow.js
+---------------------------------
+
+Generators are also ITERABLE
+Example: genIterable.js
