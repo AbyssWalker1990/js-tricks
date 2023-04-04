@@ -1,5 +1,5 @@
 
-cardDeck = ({
+cardDeck = {
   suits: ['♠', '♣', '♡', '♢'],
   court: ['J', 'Q', 'K', 'A'],
   [Symbol.iterator]: function* () {
@@ -8,17 +8,7 @@ cardDeck = ({
       for (let c of this.court) yield suit + c
     }
   }
-})
+}
 
 console.log(...cardDeck)
 
-const myObject = {
-  data: [1, 2, 3, 4],
-  *[Symbol.iterator] () {
-    for (const value of this.data) {
-      yield value
-    }
-  }
-}
-
-console.log(...myObject)
