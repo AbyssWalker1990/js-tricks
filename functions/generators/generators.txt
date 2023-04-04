@@ -16,3 +16,25 @@ Example: genWorkflow.js
 
 Generators are also ITERABLE
 Example: genIterable.js
+
+---------------------------------
+
+We can use generator func to create iterator method for objects
+Example: cardDeck.js
+
+---------------------------------
+Lazy evaluation & infinite sequences
+Example: lazyinfinitegen.js
+---------------------------------
+
+Recursive iteration with Generators
+Example: recursiveIteration.js
+
+---------------------------------
+Async iteration with generator functions
+Example: failed
+---------------------------------
+yield also can receive a data
+Example: twoWayStreet.js
+---------------------------------
+Generators remember state
