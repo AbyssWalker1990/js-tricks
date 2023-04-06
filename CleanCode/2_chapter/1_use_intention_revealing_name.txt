@@ -1,0 +1,19 @@
+Names should reveal intent!
+The name of a variable, function, or class, should answer all the big questions. 
+It should tell you why it exists, what it does, and how it is used
+----------------------------------------
+Avoid Disinformation
+Programmers must avoid leaving false clues that obscure the meaning of code. We should avoid words whose 
+entrenched meanings vary from our intended meaning
+Beware of using names which vary in small ways:
+XYZControllerForEfficientHandlingOfStrings and XYZControllerForEfficientStorageOfStrings - DONT DO THIS!!!
+
+A truly awful example of disinformative names would be the use of lower-case L or uppercase O as variable names,
+ especially in combination. The problem, of course, is that they look almost entirely like the constants one
+  and zero, respectively
+Example:
+int a = l; 
+if ( O == l )  
+  a = O1; 
+else  
+  l = 01;
