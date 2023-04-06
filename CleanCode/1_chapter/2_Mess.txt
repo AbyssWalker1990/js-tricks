@@ -1,0 +1,26 @@
+"Every change they make to the code breaks two or three other parts of the code. No change is trivial. 
+Every addition or modiﬁcation to the system requires that the tangles, twists, and knots be “understood” so 
+that more tangles, twists, and knots can be added. Over time the mess becomes so big and so deep and so tall, 
+they can not clean it up. There is no way at all"
+--------------------------------------------------
+The Great Redesign in the Sky
+The decision of redesign the whole project to get rid off these mess applied.
+The new team started to write brand new version of product while the old team still maintain main version and
+add new features for it. The new team must implement these new features too. it can take YEARS. And after many years
+it can be no longer peoples who started this new project and new programmers starting to say about new REDESIGN 
+because of mess
+--------------------------------------------------
+Attitude
+Most managers want the truth, even when they don’t act like it. Most managers want good code, even when they are 
+obsessing about the schedule. They may defend the schedule and requirements with passion; but that’s their job. 
+It’s your job to defend the code with equal passion
+--------------------------------------------------
+The Primal Conundrum
+You will not make the deadline by making the mess. Indeed, the mess will slow you down instantly, and will force 
+you to miss the deadline. The only way to make the deadline—the only way to go fast—is to keep the code as clean 
+as possible at all times
+--------------------------------------------------
+The Art of Clean Code?
+Writing clean code requires the disciplined use of a myriad little techniques applied through a painstakingly 
+acquired sense of “cleanliness.”
+
