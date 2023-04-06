@@ -17,3 +17,15 @@ if ( O == l )
   a = O1; 
 else  
   l = 01;
+----------------------------------------------------------
+Make Meaningful Distinction
+ - Dont change variable name by doing mistake on purpose. It became a problem in future
+
+ - If we have func that copies values from one array to another, parameters must NOT be like a1, a2
+  instead better to use source and destination
+
+ - Dont use "noise words". Example:
+ ProductInfo and ProductData - info and data are noise words
+ Noise words are redundant. The word variable should never appear in a variable name. 
+ The word table should never appear in a table name. How is NameString better than Name?
+
