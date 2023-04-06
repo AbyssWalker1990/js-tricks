@@ -1,0 +1,10 @@
+"They had rushed the product to market and had made a huge mess in the code. As they added more and more 
+features, the code got worse and worse until they simply could not manage it any longer"
+It was the bad code that brought the company down.
+
+We call it WADING. We wade through bad code. We slog through a morass of tangled brambles and hidden pitfalls. 
+We struggle to ﬁnd our way, hoping for some hint, some clue, of what is going on; but all we see is more and
+ more senseless code.
+
+Later equals never
+
