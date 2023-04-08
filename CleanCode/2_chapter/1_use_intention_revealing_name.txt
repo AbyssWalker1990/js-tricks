@@ -29,3 +29,31 @@ Make Meaningful Distinction
  Noise words are redundant. The word variable should never appear in a variable name. 
  The word table should never appear in a table name. How is NameString better than Name?
 
+------------------------------------------------
+USE PRONOUNCABLE NAMES!!!
+------------------------------------------------
+Use Searchable names
+Longer names trump shorter names, and any searchable name trumps a constant in code
+-------------------------------------------------
+AVOID ENCODINGS
+-------------------------------------------------
+AVOID MENTAL MAPPING
+This is a problem with single-letter variable name(must be used only with loops)
+One difference between a smart programmer and a professional programmer is that the professional understands
+ that clarity is king
+-------------------------------------------------
+CLASS NAMES
+Classes and objects should have noun or noun phrase names like Customer, WikiPage, Account, and AddressParser. 
+Avoid words like Manager, Processor, Data, or Info in the name of a class. A class name should not be a verb
+------------------------------------------------
+METHODS NAMES
+Methods should have verb or verb phrase names like postPayment, deletePage, or save. Accessors, mutators, and predicates
+ should be named for their value and preﬁxed with get, set, and is according to the javabean standard
+------------------------------------------------
+Pick one word per concept
+It’s confusing to have fetch, retrieve, and get as equivalent methods of different classes
+------------------------------------------------
+Dont Pun
+For example, we have a many methods with prefix add. All this methods something createing or concatinating.
+And now we must to define new method that only have to add a litttke property to object. It is much better to
+call that method append rather anoter add method
