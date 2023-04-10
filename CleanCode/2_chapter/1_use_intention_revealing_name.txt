@@ -57,3 +57,18 @@ Dont Pun
 For example, we have a many methods with prefix add. All this methods something createing or concatinating.
 And now we must to define new method that only have to add a litttke property to object. It is much better to
 call that method append rather anoter add method
+------------------------------------------------
+Use Solution Domain Names
+Choose technical names are IMPORTANT!
+------------------------------------------------
+Use Problem Domain Names
+------------------------------------------------
+Add Meaningful Context
+Always better to not define variables that has one context wit absolutely different names, instead better to add dsme prefix
+and MUCH better is define class for this variables and define meaningful function for them
+------------------------------------------------
+Dont Make Gratuiotous Context
+Dont add same prefixes to all variables. Use short names for classes and more informative for vars and funcs
+------------------------------------------------
+FINAL word
+Dont afraid to rename things (for better)
