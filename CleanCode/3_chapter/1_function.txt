@@ -12,3 +12,48 @@ Dont use switch statement in functions. Try to use polymorphism and defining it 
 Use descriptive names
 “You know you are working on clean code when each routine turns out to be pretty much what you expected.”
 The smaller and more focused a function is, the easier it is to choose a descriptive name
+--------------------------------------------
+Function Arguments
+The ideal number of arguments for a function is zero (niladic). Next comes one (monadic), followed closely by two (dyadic). 
+Three arguments (triadic) should be avoided where possible. More than three (polyadic) requires very special 
+justiﬁcation—and then shouldn’t be used anyway
+--------------------------------------------
+Common Monadic form
+Two default forms: 
+1. Returns boolean
+2. Returns trasformed arguments
+Exception:
+Doing some event by state of arguments
+--------------------------------------------
+Flag Arguments
+Passing a boolean into a function is a truly terrible practice
+--------------------------------------------
+Dyadic Functions
+A function with two arguments is harder to understand than a monadic function
+It is normal when 2 arguments are ordered components of a single value
+--------------------------------------------
+Triads
+Functions that take three arguments are signiﬁcantly harder to understand than dyads
+--------------------------------------------
+Argument objects
+it is a good soluttion to define an object to arguments
+--------------------------------------------
+Verbs and Keywords
+Examples:
+writeField(name)
+assertEquals might be better written as assertExpectedEqualsActual(expected, actual). Will not have to remember the order
+--------------------------------------------
+Have no Side Effects
+checkPassword must only checking passwords. If it also initializing session - that is side effect!
+--------------------------------------------
+Output Arguments
+If your function must change the state of something, have it change the state of its owning object
+--------------------------------------------
+Command Query Separation
+Functions should either do something or answer something, but NOT BOTH!
+--------------------------------------------
+Prefer exceptions to returning error codes
+returning error codes leads to deeply nested structures. Use try/catch instead
+--------------------------------------------
+Extract Try/Catch blocks
+it is better define the function that only does processing of error handling and separate from base logic
