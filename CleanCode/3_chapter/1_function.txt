@@ -3,3 +3,8 @@ Functions must be so small as you can do it
 --------------------------------------------
 Do One Thing
 Functions should do one thing. They should do it well. They should do it only
+Functions that do one thing cannot be reasonably divided into sections
+--------------------------------------------
+Reading code from top to bottom. Stepdown rule
+--------------------------------------------
+Dont use switch statement in functions. Try to use polymorphism and defining it once in object
