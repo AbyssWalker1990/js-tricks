@@ -8,3 +8,7 @@ Functions that do one thing cannot be reasonably divided into sections
 Reading code from top to bottom. Stepdown rule
 --------------------------------------------
 Dont use switch statement in functions. Try to use polymorphism and defining it once in object
+--------------------------------------------
+Use descriptive names
+“You know you are working on clean code when each routine turns out to be pretty much what you expected.”
+The smaller and more focused a function is, the easier it is to choose a descriptive name
