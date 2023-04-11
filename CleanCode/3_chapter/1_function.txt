@@ -57,3 +57,6 @@ returning error codes leads to deeply nested structures. Use try/catch instead
 --------------------------------------------
 Extract Try/Catch blocks
 it is better define the function that only does processing of error handling and separate from base logic
+-------------------------------------------
+Error handling is one thing
+Functions should do one thing. Error handing is one thing. Thus, a function that handles errors should do nothing else
