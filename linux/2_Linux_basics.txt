@@ -1,0 +1,31 @@
+Booting steps:
+1. BIOS(Basic input/Output system) - initialize the screen ans keyboard and tests the main memory
+2. Master Boot Record (MBR) and Boot Loader(GRUB or another)
+3. Kernel (Linux OS)
+4. Initial RAM disk - initramfs image: 
+    - Mount proper root Filesystem
+    - Providing Kernel functionality
+    - locating devices 
+    - locating drivers and load them
+    - checking for errors in root filesystem
+5. /sbin/init (parent process) - starts other process to get the system running
+-------------------------------------
+
+Linux Filesystem Basics:
+Filesystem Hierarchy Standard (FHS):
+    /bin/   - essential user command binaries
+    /boot/  - static files of the boot loader
+    /dev/   - device files
+    /etc/   - host-specific system configurations
+    /home/  - user home directories
+    /lib/   - essential shared libraries and kernel modules
+    /media/ - mount point for removable media
+    /mnt/   - mount point for a temporarily mounted filesystems
+    /opt/   - add-on app software packages
+    /sbin/  - system binaries
+    /srv/   - data for services provided by this system
+    /tmp/   - temporary files
+    /usr/   - (multi-)user utilities and applications 
+    /var/   - variable files
+    /root/  - home directory for the root user
+    /proc/  - virtual filesystem documenting kernel and process status as a text files
