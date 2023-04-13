@@ -1,0 +1,23 @@
+Comments Do Not Make up For Bad Code
+Clear and expressive code with few comments is far superior to cluttered and complex code with lots of comments. 
+Rather than spend your time writing the comments that explain the mess you’ve made, spend it cleaning that mess.
+---------------------------------------
+Explain Yourself in Code
+It is better to explain your intention by properly naming classes, functions and variables in good organized code
+than explain mess that you wrote
+---------------------------------------
+Good Comments
+Some comments are necessary or beneﬁcial.
+---------------------------------------
+Legal comments
+Copyright and authorship statements are necessary and reasonable things to put into a comment at the start of each source ﬁle.
+---------------------------------------
+Informative Comments
+It is sometimes useful to provide basic information with a comment
+---------------------------------------
+Explanation of intent
+We can explain WHY we done something
+---------------------------------------
+Clarification
+Sometimes it is just helpful to translate the meaning of some obscure argument or return value into something that’s readable.
+ In general it is better to ﬁnd a way to make that argument or return value clear in its own right
