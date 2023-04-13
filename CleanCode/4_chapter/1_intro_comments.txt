@@ -1,0 +1,5 @@
+“Don’t comment bad code—rewrite it.”
+--------------------------------------
+Code changes and evolves. Chunks of it move from here to there. Those chunks bifurcate and reproduce and come together 
+again to form chimeras. Unfortunately the comments don’t always follow them—can’t always follow them. And all too often 
+the comments get separated from the code they describe and become orphaned blurbs of everdecreasing accuracy
