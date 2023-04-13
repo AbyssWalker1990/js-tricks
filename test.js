@@ -1,29 +1,28 @@
-const romanNumerals = new Map()
-romanNumerals.set(1, 'I').set(2, 'II').set(3,'III').set(4,'IV')
-console.log(romanNumerals)
-const arr = [...romanNumerals]
-const arr2 = [...romanNumerals]
-const arr3 = [...romanNumerals]
+const playKosti = (firstPlayerName, secondPlayerName) => {
+  let firstPlayerResult = Math.floor((Math.random()*13))
+  if (firstPlayerResult < 2) {
+    firstPlayerResult = 2
+  } 
+  let secondPlayerResult = Math.floor((Math.random()*13))
+  if (secondPlayerResult < 2) {
+    secondPlayerResult = 2
+  } 
+  console.log(`${firstPlayerName} throw ${firstPlayerResult}`)
+  console.log(`${secondPlayerName} throw ${secondPlayerResult}`)
+  const arr = [firstPlayerResult, secondPlayerResult]
 
-function concatArrays (arr) {
-  const result = []
-  for (item of arr) {
-    for (subItem of item) {
-      result.push(subItem)
-    }
+  const biggerNumber = Math.max(...arr)
+
+  if (firstPlayerResult === secondPlayerResult) {
+    return `Draw`
+  } else if (biggerNumber === firstPlayerResult) {
+    return `${firstPlayerName} won with ${firstPlayerResult}`
+  } else {
+    return `${secondPlayerName} won with ${secondPlayerResult}`
   }
-  return result
 }
-const concated = concatArrays(arr)
-const concated1 = concatArrays(arr2)
-const concated2 = concatArrays(arr3)
-console.log(concated)
 
-
-
-
-
-
+console.log(playKosti('Tania', 'Andriy'))
 
 
 
