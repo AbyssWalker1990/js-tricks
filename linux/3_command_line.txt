@@ -1,0 +1,9 @@
+"Graphical user interfaces make easy tasks easier, whil command line interfaces make difficult tasks possible"
+
+Structure of command:
+Command -options arguments
+ls -a /home/angela
+
+Commands:
+shutdown -h     // Halts the operating system completely
+shutdown -r     // Reboot
