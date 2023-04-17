@@ -5,5 +5,38 @@ Command -options arguments
 ls -a /home/angela
 
 Commands:
-shutdown -h     // Halts the operating system completely
-shutdown -r     // Reboot
+Shutdown and Reboot system
+    shutdown -h     // Halts the operating system completely
+    shutdown -r     // Reboot
+-----------------------------------------
+Locating applications
+    which firefox
+    whereis firefox
+-----------------------------------------
+Accessing directories
+    echo $home  // Shows home dir
+    pwd     // Displaying current dir
+    cd ~    // Change to home dir
+    cd ..   // Change To parent dir
+    cd -    // Change to previous dir
+    pushd path  // Change to dir and push it to dir stack
+    popd    // removes last dir from stack and go to previous, has different flags
+----------------------------------------
+Exploring the Filesystem
+    tree address    // Shows tree of adress dir
+    cd /    // Go to root dir
+    ls      // List content ow current work dir
+    ls -a   // Shows All files including hidden
+----------------------------------------
+Hard Links
+    touch file1     // Creating file
+    ln file1 file2  // Create hard link
+    ls -li file1 file2  // Shows this 2 files with access permissions and unique number in 1 column that shows thay it is 1 file
+Soft (Symbolic) Links
+    ln -s file1 file3   // Creates soft link
+    ls -li file1 file3  // Check that these files have differents id 
+----------------------------------------
+Navigating the directory History
+    
+
+
