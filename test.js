@@ -1,13 +1,19 @@
-const playKosti = (firstPlayerName, secondPlayerName) => {
-  let firstPlayerResult = throwBones()
-  let secondPlayerResult = throwBones()
-  declareResults(firstPlayerName, secondPlayerName, firstPlayerResult, secondPlayerResult)
+const playDice = (...playerNames) => {
+  
+  const playersResults = new Map()
+  for (let player of playerNames) {
+    let result = throwDice()
+    playersResults.set(player, result)
+  }
+
+  declareResults(playersResults)
+
   const biggerResult = findBiggerResult(firstPlayerResult, secondPlayerResult)
   const champion = detectChampion(biggerResult,firstPlayerResult, secondPlayerResult, firstPlayerName, secondPlayerName)
   return champion
 }
 
-function throwBones () {
+function throwDice () {
   let result = Math.floor((Math.random()*13))
   if (result < 2) {
     result = 2
@@ -15,9 +21,10 @@ function throwBones () {
   return result
 }
 
-function declareResults (playerName1, playerName2, result1, result2) {
-  console.log(`${playerName1} throw ${result1}`)
-  console.log(`${playerName2} throw ${result2}`)
+function declareResults (results) {
+  for (let [playerName, result] of results.entries()) {
+    console.log(`${playerName} threw ${result}`)
+  }
 }
 
 function findBiggerResult(result1, result2) {
@@ -30,7 +37,7 @@ function detectChampion(biggerResult, result1, result2, firstPlayerName, secondP
   return `${secondPlayerName} won with ${result2}`  
 }
 
-console.log(playKosti('Tania', 'Andriy'))
+console.log(playDice('Tania', 'Andriy', 'Vadim', 'Vova', 'Arina'))
 
 
 
