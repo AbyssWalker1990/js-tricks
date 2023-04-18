@@ -21,3 +21,32 @@ We can explain WHY we done something
 Clarification
 Sometimes it is just helpful to translate the meaning of some obscure argument or return value into something that’s readable.
  In general it is better to ﬁnd a way to make that argument or return value clear in its own right
+---------------------------------------
+Warning of consequences
+Sometimes it is useful to warn other programmers about certain consequences.
+---------------------------------------
+TODOs comments
+It can be useful, but we must eliminate them as soon as possible
+---------------------------------------
+Amplification
+A comment may be used to amplify the importance of something that may otherwise seem inconsequential
+---------------------------------------
+BAD COMMENTS
+Most comments fall into this category
+---------------------------------------
+Mumbling
+If you decide to write a comment, then spend the time necessary to make sure it is the best comment you can write.
+Any comment that forces you to look in another module for the meaning of that comment has failed to communicate to
+ you and is not worth the bits it consumes.
+---------------------------------------
+Redundant comments
+What purpose does this comment serve? It’s certainly not more informative than the code. It does not justify the code, 
+or provide intent or rationale. It is not easier to read than the code. Indeed, it is less precise than the code and 
+entices the reader to accept that lack of precision in lieu of true understanding
+---------------------------------------
+Misleading Comments
+Sometimes, with all the best intentions, a programmer makes a statement in his comments that isn’t precise enough to be accurate
+---------------------------------------
+Mandatory Comments
+It is just plain silly to have a rule that says that every function must have a javadoc, or every variable must have a comment. 
+Comments like this just clutter up the code, propagate lies, and lend to general confusion and disorganization
