@@ -50,3 +50,34 @@ Sometimes, with all the best intentions, a programmer makes a statement in his c
 Mandatory Comments
 It is just plain silly to have a rule that says that every function must have a javadoc, or every variable must have a comment. 
 Comments like this just clutter up the code, propagate lies, and lend to general confusion and disorganization
+---------------------------------------
+Journal Comments
+Dont use it. Instead use VCS
+---------------------------------------
+Noise Comments
+Sometimes you see comments that are nothing but noise. They restate the obvious and provide no new information
+---------------------------------------
+Scary Noise
+Javadocs can also be noisy. What purpose do the following Javadocs (from a well-known open-source library) serve? 
+Answer: nothing. They are just redundant noisy comments written out of some misplaced desire to provide documentation
+---------------------------------------
+Dont use a Comment when u Can use Function or Variable
+---------------------------------------
+Position Markers
+A banner is startling and obvious if you don’t see banners very often. So use them very sparingly, and only when 
+the beneﬁt is signiﬁcant.
+---------------------------------------
+Closing Brace Comments
+If you ﬁnd yourself wanting to mark your closing braces, try to shorten your functions instead
+---------------------------------------
+Attribution and Bylines
+The source code control system is a better place for this kind of information
+---------------------------------------
+Commented-out Code
+Few practices are as odious as commenting-out code. Don’t do this!
+--------------------------------------
+HTML comments
+HTML in source code comments is an abomination.
+--------------------------------------
+Non-local information
+If you must write a comment, then make sure it describes the code it appears near
