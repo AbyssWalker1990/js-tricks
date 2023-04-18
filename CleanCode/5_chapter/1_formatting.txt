@@ -1,0 +1,10 @@
+FORMATTING
+You should take care that your code is nicely formatted. You should choose a set of simple rules that govern the format 
+of your code, and then you should consistently apply those rules. If you are working on a team, then the team should 
+agree to a single set of formatting rules and all members should comply
+-------------------------------------
+The Purpose of formatting
+Code formatting is important. It is too important to ignore and it is too important to treat religiously. 
+Code formatting is about communication, and communication is the professional developer’s ﬁrst order of business.
+The coding style and readability set precedents that continue to affect maintainability and extensibility long after 
+the original code has been changed beyond recognition. Your style and discipline survives, even though your code does not
