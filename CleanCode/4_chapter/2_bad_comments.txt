@@ -81,3 +81,15 @@ HTML in source code comments is an abomination.
 --------------------------------------
 Non-local information
 If you must write a comment, then make sure it describes the code it appears near
+--------------------------------------
+Too Much information
+Don’t put interesting historical discussions or irrelevant descriptions of details into your comments
+--------------------------------------
+Inobvious Connection
+The connection between a comment and the code it describes should be obvious
+The purpose of a comment is to explain code that does not explain itself. 
+It is a pity when a comment needs its own explanation
+--------------------------------------
+Function Header
+Short functions don’t need much description. A well-chosen name for a small function 
+that does one thing is usually better than a comment heade
