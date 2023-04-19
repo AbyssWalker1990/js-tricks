@@ -36,7 +36,35 @@ Soft (Symbolic) Links
     ln -s file1 file3   // Creates soft link
     ls -li file1 file3  // Check that these files have differents id 
 ----------------------------------------
-Navigating the directory History
-    
+Working with files
+    wc filename.txt     // shows info about lines, words, bytes etc. Have options
+    cat filename.txt    // Shows what inside document
+    cat -n filename.txt    // added numbers to lines
+    less filename.txt   // opens file and shows 1 screen at time, we can use space for navigate forward
+    less -N filename    // added numbers to lines
+    head filename.txt   // Shows first 10 lines, can use flags like -20 for showing 20 etc.
+    tail filename.txt   // Shows last 10 lines, can use flags like -20 for showing 20 etc.
+    tac filename.txt    // Shows content of file backwards
+
+    echo > filename     // Creates a file
+    touch filename      // Creates a file
+    mv filename new-filename    // Renames file
+    rm filename     // Deletes file
+    rm -i filename  // Asks before removing
+    mkdir dirname   // Creates directory, can create multiple in one line
+    rmdir dirname   // Removes directory
+    rm -rf dirname  // Removes even directory is not empty
+
+    locate example  // finds all filenames with this sample
+    find . -name "regexp"   // find in current dir by name or regexp
+    find . -name "regexp" -ls  // find in current dir by name or regexp and give extrainfo
+    find -name ".swp" -exec rm {} ';'   // Find and removes all files with .swp 
+    find . -type d      // Find all directories in current dir
+    find . -maxdepth 1 -type d  // Find onli dirs without subdirs
+    find . -type f -exec grep -H return {} \;   // find all files and then shows only where we have "return" in content or name
+
+
+
+
 
 
