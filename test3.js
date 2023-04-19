@@ -1,6 +1,13 @@
-
-function discount (price, amount = 10) {
-  return price * (100 - amount) / 100
+function add(num1, num2, callback) {
+  let sum = num1 + num2
+  if (callback) {
+    sum = callback(sum)
+  }
+  return sum
 }
 
-console.log(discount(250))
+function callB(num) {
+  return num *10
+}
+
+console.log(add(1, 4))
