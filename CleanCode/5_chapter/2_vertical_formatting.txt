@@ -12,3 +12,20 @@ We would like a source ﬁle to be like a newspaper article. The name should be 
 should be sufﬁcient to tell us whether we are in the right module or not. The topmost parts of the source ﬁle should provide 
 the high-level concepts and algorithms. Detail should increase as we move downward, until at the end we ﬁnd the lowest level 
 functions and details in the source ﬁle.
+----------------------------------
+Vertical Openness Between concepts
+ Each line represents an expression or a clause, and each group of lines represents a complete thought. 
+ Those thoughts should be separated from each other with blank lines.
+----------------------------------
+Vertical Dencity
+If openness separates concepts, then vertical density implies close association. So lines of code that are tightly 
+related should appear vertically dense
+----------------------------------
+Vertical Distance
+Concepts that are closely related should be kept vertically close to each other [G10]. Clearly this rule doesn’t work for concepts
+that belong in separate ﬁles. But then closely related concepts should not be separated into different ﬁles unless you 
+have a very good reason. Indeed, this is one of the reasons that protected variables should be avoided.
+----------------------------------
+Variable Declaration
+Variables should be declared as close to their usage as possible.
+Control variables for loops should usually be declared within the loop statement
