@@ -44,7 +44,23 @@ const car = {
 const luxuryCar = {}
 Object.setPrototypeOf(luxuryCar, car)
 luxuryCar.seatMaterial = 'leather'
-console.log(luxuryCar)
-console.log(luxuryCar.doors)
-// https://www.youtube.com/watch?v=mQ4oCgcgHOA
-// 11:36
+console.log('luxuryCar: ', luxuryCar)
+console.log('luxuryCar.doors: ', luxuryCar.doors)
+console.log('car: ', car)
+
+//Walking up the chain
+console.log('----------------------- Walking up the chain -----------------------')
+console.log('luxuryCar.valueOf():', luxuryCar.valueOf())
+// Getting the keys of an object
+console.log('----------------------- Getting the keys of an object -----------------------')
+console.log(Object.keys(luxuryCar))
+// Loop with forEech
+Object.keys(luxuryCar).forEach(key => {
+  console.log(key)
+})
+// loop for in. INCLUDES INHERITED PROPERTIES
+console.log('----------------------- for in loop -----------------------')
+
+for (let key in luxuryCar) {
+  console.log(key)
+}
