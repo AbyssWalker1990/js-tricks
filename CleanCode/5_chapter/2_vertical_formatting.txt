@@ -29,3 +29,14 @@ have a very good reason. Indeed, this is one of the reasons that protected varia
 Variable Declaration
 Variables should be declared as close to their usage as possible.
 Control variables for loops should usually be declared within the loop statement
+----------------------------------
+Instance Variables
+The important thing is for the instance variables to be declared in one well-known place. 
+Everybody should know where to go to see the declarations. 
+----------------------------------
+Dependent functions
+If one function calls another, they should be vertically close, and the caller should be above the callee, if at all possible
+----------------------------------
+Conceptual Affinity
+ Certain bits of code want to be near other bits. They have a certain conceptual afﬁnity. The stronger that afﬁnity, 
+ the less vertical distance there should be between them.
