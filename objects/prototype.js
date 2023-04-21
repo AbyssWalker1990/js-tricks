@@ -64,3 +64,63 @@ console.log('----------------------- for in loop -----------------------')
 for (let key in luxuryCar) {
   console.log(key)
 }
+
+// Object Constructors
+console.log('----------------------- Object Constructors -----------------------') 
+function Animal(species) {
+  this.species = species
+  this.eats = true
+}
+
+Animal.prototype.walks = function () {
+  return `A ${this.species} is walking`
+}
+
+const Bear = new Animal('bear')
+
+console.log(Bear.species)
+console.log(Bear.walks())
+
+//The prototype property is where inheritable props and methods are
+console.log('----------------------- Bear.__proto__ -----------------------') 
+
+console.log(Bear.__proto__)
+console.log('----------------------- Bear.__proto__ === Animal.prototype -----------------------') 
+
+console.log(Bear.__proto__ === Animal.prototype)
+console.log('Animal.prototype: ', Animal.prototype)
+console.log('Bear: ',Bear)
+
+// ES6 classes example of inheritance
+console.log('----------------------- ES6 classes example of inheritance -----------------------') 
+
+class Vehicle {
+  constructor() {
+    this.wheeels = 4,
+    this.motorized = true
+  }
+
+  ready() {
+    return 'Ready to go'
+  }
+}
+
+class Motorcycle extends Vehicle {
+  constructor () {
+    super()
+    this.wheels = 2
+  }
+
+  wheelie () {
+    return 'On one wheel now'
+  }
+}
+
+const myBike = new Motorcycle() 
+console.log('myBike: ', myBike)
+console.log('myBike.wheels: ', myBike.wheels)
+console.log('myBike.ready(): ', myBike.ready())
+console.log('myBike.wheelie(): ', myBike.wheelie())
+
+const myTruck = new Vehicle()
+console.log('myTruck: ', myTruck)
