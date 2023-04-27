@@ -1,0 +1,4 @@
+Vertical formatting
+Horizontal openness and dencity:
+Max symbols in row: 120
+---------------------------------
