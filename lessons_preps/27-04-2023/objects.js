@@ -1,3 +1,5 @@
+const lodash = require('lodash')
+
 class Human {
   constructor(name) {
     this.name = name
@@ -13,7 +15,23 @@ class Human {
 const andriy = new Human('Andriy')
 
 const vova = JSON.parse(JSON.stringify(andriy))
+const vadim = lodash.cloneDeep(vova)
 
-console.log(vova)
-console.log(andriy)
+// console.log(vova)
+// console.log(andriy)
+// console.log(vadim)
+
+const AncientHuman = {
+  arms: 2,
+  legs: 2,
+  roar () {
+    console.log('Aaaarghh!')
+  }
+}
+
+const ancientAndriy = Object.create(AncientHuman)
+
+console.log(ancientAndriy.arms)
+console.log(ancientAndriy.legs)
+console.log(ancientAndriy.roar())
 
