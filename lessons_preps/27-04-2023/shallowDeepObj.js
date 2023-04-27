@@ -5,7 +5,8 @@ const b = {
   pet: {
     petName: 'Lol',
     petAge: 32,
-    petHobbies: ['Run', 'Swim']
+    petHobbies: ['Run', 'Swim'],
+    customSet: new Set([1, 2, 3])
   }
 }
 
@@ -29,6 +30,7 @@ function mixin (target, ...objects) {
   return target
 }
 
+console.log(b)
 const c = {}
 mixin(c, b)
 console.log(c)

@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AbyssWalker1990/js-tricks/issues"
   },
-  "homepage": "https://github.com/AbyssWalker1990/js-tricks#readme"
+  "homepage": "https://github.com/AbyssWalker1990/js-tricks#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
