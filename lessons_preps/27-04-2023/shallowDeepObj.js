@@ -11,26 +11,26 @@ const b = {
 }
 
 Object.assign(a, b)
-// console.log(a)
-// b.pet.petHobbies.push('Eat')
-// console.log(a)
+console.log(a)
+b.pet.petHobbies.push('Eat')
+console.log(a)
 
 
-function mixin (target, ...objects) {
-  for (const object of objects) {
-    for (const key of Object.keys(object)) {
-      if (typeof object[key] === 'object') {
-        target[key] = Array.isArray(object[key]) ? [] : {}
-        mixin(target[key], object[key])
-      } else {
-        Object.assign(target, object)
-      }
-    }
-  }
-  return target
-}
+// function mixin (target, ...objects) {
+//   for (const object of objects) {
+//     for (const key of Object.keys(object)) {
+//       if (typeof object[key] === 'object') {
+//         target[key] = Array.isArray(object[key]) ? [] : {}
+//         mixin(target[key], object[key])
+//       } else {
+//         Object.assign(target, object)
+//       }
+//     }
+//   }
+//   return target
+// }
 
-console.log(b)
-const c = {}
-mixin(c, b)
-console.log(c)
+// console.log(b)
+// const c = {}
+// mixin(c, b)
+// console.log(c)

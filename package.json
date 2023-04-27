@@ -1,22 +1,14 @@
 {
   "name": "js-tricks",
   "version": "1.0.0",
-  "description": "",
-  "main": "complexTernary.js",
+  "description": "Learning project",
+  "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node test8"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AbyssWalker1990/js-tricks.git"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Bordiian",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AbyssWalker1990/js-tricks/issues"
-  },
-  "homepage": "https://github.com/AbyssWalker1990/js-tricks#readme",
   "dependencies": {
     "lodash": "^4.17.21"
   }
