@@ -1,14 +1,36 @@
 const a = {}
 
-const b = {
-  number: [ 1, 43, 7],
+const firstObj = {
+  numbers: [1, 5, 6],
   name: 'Andriy',
   pet: {
-    petName: 'Kostia',
-    petAge: 29,
-    petHobbies: ['Run', 'Play']
+    petName: 'Lol',
+    petAge: 32,
+    petHobbies: ['Run', 'Swim'],
+  },
+  fly: function () {
+    console.log('FLYING')
   }
 }
 
-Object.assign(a, b)
+const secondObj = {
+  roles: ['Healer', 'Tank', 'Support'],
+  hp: 1000
+}
+
+function deepClone (target, ...objects) {
+  for (object of objects) {
+    for (key of Object.entries(object)) {
+      if (typeof object[key] === 'object') {
+        target[key] = Array.isArray(object[key]) ? [] : {}
+        deepClone(target[key], object[key])
+      } else {
+        Object.assign(target, object)
+      }
+    }
+  }
+  return target
+}
+
+deepClone(a, firstObj,secondObj)
 console.log(a)
