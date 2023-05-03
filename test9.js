@@ -6,7 +6,7 @@ const firstObj = {
   pet: {
     petName: 'Lol',
     petAge: 32,
-    petHobbies: ['Run', 'Swim'],
+    petHobbies: ['Run', 'Swim', [1, 2, 4]],
   },
   fly: function () {
     console.log('FLYING')
@@ -18,12 +18,12 @@ const secondObj = {
   hp: 1000
 }
 
-function deepClone (target, ...objects) {
-  for (object of objects) {
-    for (key of Object.entries(object)) {
+function superAssign(target, ...objects) {
+  for (const object of objects) {
+    for (const key of Object.keys(object)) {
       if (typeof object[key] === 'object') {
         target[key] = Array.isArray(object[key]) ? [] : {}
-        deepClone(target[key], object[key])
+        superAssign(target[key], object[key])
       } else {
         Object.assign(target, object)
       }
@@ -32,5 +32,9 @@ function deepClone (target, ...objects) {
   return target
 }
 
-deepClone(a, firstObj,secondObj)
+const newObj = superAssign(a, firstObj, secondObj)
 console.log(a)
+
+
+
+

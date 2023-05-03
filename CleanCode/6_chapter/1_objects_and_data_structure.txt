@@ -1,0 +1,2 @@
+Data Abstraction
+Don't expose the details of your data. We need to think about better way to represent our data and donot add getters and setters blightly

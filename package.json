@@ -1,15 +1,11 @@
 {
   "name": "js-tricks",
   "version": "1.0.0",
-  "description": "Learning project",
-  "main": "test.js",
+  "description": "",
+  "main": "complexTernary.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node test8"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Bordiian",
-  "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+  "author": "",
+  "license": "ISC"
 }
