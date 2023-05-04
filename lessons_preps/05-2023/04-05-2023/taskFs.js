@@ -1,4 +1,5 @@
 const fsPromises = require('fs').promises
+const path = require('path')
 
 class TextFormatter {
   constructor(path) {
@@ -9,8 +10,8 @@ class TextFormatter {
   init = async () => {
     const data = await this.readFile(this.path)
     const cutted = this.cutSentence(data.toString())
-    // const formattedText = addStatistics(cutted)
-    // console.log(formattedText)
+    const textWithStatistics = this.addStatistics(cutted)
+    this.writeFile(textWithStatistics)
   }
 
   readFile = async () => {
@@ -20,9 +21,9 @@ class TextFormatter {
 
   cutSentence = (data) => {
     console.log(typeof data)
-    const cutted = data.replace('\n', '').split('.')
-    console.log(cutted)
-    return cutted
+    const cutted = data.replaceAll('\n', '').split('.')
+    const trimmedSentences = cutted.map(sentence => sentence.trim())
+    return trimmedSentences
   }
 
   addStatistics = (sentences) => {
@@ -32,8 +33,12 @@ class TextFormatter {
       const formattedSentence = `${sentence} // Words: ${wordCount}, Symbols: ${sentence.length}\n`
       result.push(formattedSentence)
     })
-    return result.join(' ')
+    return result.join(' ').trim()
+  }
+
+  writeFile = async (formattedText) => {
+    fsPromises.writeFile(path.join(__dirname, 'result.txt'), formattedText)
   }
 }
 
-const textFormatter = new TextFormatter('./ninja.txt')
+const textFormatter = new TextFormatter(path.join(__dirname, 'ninja.txt'))
