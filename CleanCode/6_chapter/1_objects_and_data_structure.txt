@@ -1,2 +1,6 @@
 Data Abstraction
-Don't expose the details of your data. We need to think about better way to represent our data and donot add getters and setters blightly
+Don't expose the details of your data. We need to think about better way to represent our data and do not add getters 
+and setters blightly
+-------------------------------------------
+Procedural code (code using data structures) makes it easy to add new functions without changing the existing data structures. 
+OO code, on the other hand, makes it easy to add new classes without changing existing functions.
