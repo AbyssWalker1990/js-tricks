@@ -4,3 +4,12 @@ and setters blightly
 -------------------------------------------
 Procedural code (code using data structures) makes it easy to add new functions without changing the existing data structures. 
 OO code, on the other hand, makes it easy to add new classes without changing existing functions.
+-------------------------------------------
+Law of Demeter
+More precisely, the Law of Demeter says that a method f of a class C should only call
+the methods of these:
+• C
+• An object created by f
+• An object passed as an argument to f
+• An object held in an instance variable of C
+-------------------------------------------

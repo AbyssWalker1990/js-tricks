@@ -25,6 +25,7 @@ const fileOps = async () => {
   }
 }
 
+
 fileOps()
 
 // fs.readFile('./testfiles/test.txt', (err, data) => {
