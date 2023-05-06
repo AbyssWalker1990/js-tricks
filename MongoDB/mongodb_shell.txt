@@ -25,4 +25,49 @@ Commands:
     db.books.find().count() // shows how many documents
     db.books.find({author: "Terry Pratchett"}).count()  // count with filter
     db.books.find().limit(3) // Shows with limit
-    
+    db.books.find().sort({title: 1}) // sort ascending
+    db.books.find().sort({title: -1}) // sort descending
+- Operators and complex queries
+    db.books.find({rating: {$gt: 7}}) // find all books with rating > 7
+    db.books.find({rating: {$lte: 6}}) // find all books with rating <= 6
+    db.books.find({$or: [{rating: 7}, {rating: 9}]}) //find all books with rating 7 OR 9
+    db.books.find({$or: [{pages: {$lt: 300}}, {pages: {$gt: 400}}]}) find all books with pages < 300 OR pages > 400
+    db.books.find({rating: {$in: [7,8,9]}}) // find all docs with rating 7, 8, 9
+    db.books.find({rating: {$nin: [7,8,9]}}) // find all docs WITHOUT rating 7, 8, 9
+- Filter for nested ARRAYS
+    db.books.find({genres: "magic"}) // find all books where "magic" is in genre array
+    db.books.find({genres: ["magic"]})  // find with EXACT ONE genre "magic"
+    db.books.find({genres: {$all: ["fantasy", "sci-fi"]}}) // find with fantasy and scifi and anything else
+    db.books.find({"reviews.name": "Luigi"}) // find all books with Luigi review
+- Delete Data
+    db.books.deleteOne({_id: ObjectId("645674f759df8634990c183d")})  // Delete by id
+    db.books.deleteMany({author: "Terry Pratchett"}) // Delete all Terry Pratchett books
+- Updating documents
+    db.books.updateOne(
+            {_id: ObjectId("645674f759df8634990c183c")}, 
+            {$set: {rating: "9", pages: 367}}
+        )   // Update rating and pages
+    db.books.updateMany(
+            {author: "Terry Pratchett"}, 
+            {$set: {author: "Terry Pratchet"}}
+        )   // Update all books with author "Terry Pratchett"
+    db.books.updateOne(
+            {_id: ObjectId("645674f759df8634990c183d")}, 
+            {$inc: {pages: 2}}
+        ) // Increment pages by 2
+    db.books.updateOne(
+            {_id: ObjectId("645674f759df8634990c183d")}, 
+            {$inc: {pages: -105}}
+        ) // Decrement pages by 105
+    db.books.updateOne(
+            {_id: ObjectId("645674f759df8634990c183d")}, 
+            {$pull: {genres: "fantasy"}}
+        ) // Pull out from array
+    db.books.updateOne(
+            {_id: ObjectId("645674f759df8634990c183d")}, 
+            {$push: {genres: "fantasy"}}
+        ) // Push to array
+    db.books.updateOne(
+        {_id: ObjectId("645674f759df8634990c183d")}, 
+        {$push: {genres: {$each: ["1", "2"]}}}
+        ) // Pushes multiple genres
