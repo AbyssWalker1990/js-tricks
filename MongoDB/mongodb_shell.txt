@@ -4,6 +4,7 @@ Commands:
     show collections // ...
     help // ...
     exit // ...
+--------------------------------------------------
 - Adding new documents
     db.books // creates collection "books"
     db.books.insertOne({
@@ -14,6 +15,7 @@ Commands:
         genres: ["fantasy", "magic"]
         })  // insert document
     db.books.insertMany() // insert many documents in []
+--------------------------------------------------
 - Finding documents
     db.books.find() // shows first 20 documents
     it // iterate and shows next 20
@@ -21,12 +23,14 @@ Commands:
     db.books.find({author: "Terry Pratchett"}, {title: 1, author: 1}) // returns only pointed fields
     db.books.find({}, {title: 1, author: 1}) // returns ALL documents with pointed fields
     db.books.findOne({_id: ObjectId("64565cdeff6ea18a1ec4a99d")}) // fins by id
+--------------------------------------------------
 - Sorting and limiting data
     db.books.find().count() // shows how many documents
     db.books.find({author: "Terry Pratchett"}).count()  // count with filter
     db.books.find().limit(3) // Shows with limit
     db.books.find().sort({title: 1}) // sort ascending
     db.books.find().sort({title: -1}) // sort descending
+--------------------------------------------------
 - Operators and complex queries
     db.books.find({rating: {$gt: 7}}) // find all books with rating > 7
     db.books.find({rating: {$lte: 6}}) // find all books with rating <= 6
@@ -34,11 +38,13 @@ Commands:
     db.books.find({$or: [{pages: {$lt: 300}}, {pages: {$gt: 400}}]}) find all books with pages < 300 OR pages > 400
     db.books.find({rating: {$in: [7,8,9]}}) // find all docs with rating 7, 8, 9
     db.books.find({rating: {$nin: [7,8,9]}}) // find all docs WITHOUT rating 7, 8, 9
+--------------------------------------------------
 - Filter for nested ARRAYS
     db.books.find({genres: "magic"}) // find all books where "magic" is in genre array
     db.books.find({genres: ["magic"]})  // find with EXACT ONE genre "magic"
     db.books.find({genres: {$all: ["fantasy", "sci-fi"]}}) // find with fantasy and scifi and anything else
     db.books.find({"reviews.name": "Luigi"}) // find all books with Luigi review
+--------------------------------------------------
 - Delete Data
     db.books.deleteOne({_id: ObjectId("645674f759df8634990c183d")})  // Delete by id
     db.books.deleteMany({author: "Terry Pratchett"}) // Delete all Terry Pratchett books
@@ -71,3 +77,4 @@ Commands:
         {_id: ObjectId("645674f759df8634990c183d")}, 
         {$push: {genres: {$each: ["1", "2"]}}}
         ) // Pushes multiple genres
+--------------------------------------------------
