@@ -1,0 +1,16 @@
+Commands:
+    use nameofdb // Switch database
+    cls // Clear screen
+    show collections // ...
+    help // ...
+    exit // ...
+- Adding new documents
+    db.books // creates collection "books"
+    db.books.insertOne({
+        title: "Color of magic", 
+        author: "Terry Pratchet", 
+        pages: 300, 
+        rating: 7, 
+        genres: ["fantasy", "magic"]
+        })  // insert document
+    db.books.insertMany() // insert many documents in []
