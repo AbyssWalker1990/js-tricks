@@ -14,3 +14,15 @@ Commands:
         genres: ["fantasy", "magic"]
         })  // insert document
     db.books.insertMany() // insert many documents in []
+- Finding documents
+    db.books.find() // shows first 20 documents
+    it // iterate and shows next 20
+    db.books.find({author: "Terry Pratchett"}) // using filter
+    db.books.find({author: "Terry Pratchett"}, {title: 1, author: 1}) // returns only pointed fields
+    db.books.find({}, {title: 1, author: 1}) // returns ALL documents with pointed fields
+    db.books.findOne({_id: ObjectId("64565cdeff6ea18a1ec4a99d")}) // fins by id
+- Sorting and limiting data
+    db.books.find().count() // shows how many documents
+    db.books.find({author: "Terry Pratchett"}).count()  // count with filter
+    db.books.find().limit(3) // Shows with limit
+    
