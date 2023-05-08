@@ -13,3 +13,6 @@ the methods of these:
 • An object passed as an argument to f
 • An object held in an instance variable of C
 -------------------------------------------
+Hiding structure
+Before trying to expose internals of objects - try to think for what u want to do this?
+Maybe better to write method and object can do real stuff instead of exposing his data?
