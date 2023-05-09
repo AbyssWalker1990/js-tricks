@@ -1,0 +1,11 @@
+Task:
+  Create a program that reads all 3 files inside data directory. Pull out all numbers from texts:
+  Example: 24,901 will be [2, 4, 9, 0, 1] // Only digits from 0 to 9
+  Then count sum of all these numbers and show result in console
+
+Hints:
+  1. Start from just reading file and join all texts in one data variable
+  2. Pull out all numbers using loop to iterate through string. It can be done by trying to convert each symbol
+  into number and then validate if it works using Number object static methods. Numbers you can push into array
+  3. Sum all numbers in array
+  4. Done
