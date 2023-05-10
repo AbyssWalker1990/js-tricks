@@ -65,3 +65,34 @@ Example INSERT with AUTO_INCREMENT:
 
 INSERT INTO student(name, major) VALUES('Jack', 'Biology');         // id will be 1
 INSERT INTO student(name, major) VALUES('Kate', 'Sociology');       // id will be 2
+
+-----------------------------------------------------------------------------
+
+UPDATE and DELETE
+
+UPDATE student
+SET major = 'Bio'
+WHERE major = 'Biology'; // updates all Biology to Bio
+
+UPDATE student
+SET major = 'Comp Sci'
+WHERE student_id = 4;   // updates major to Comp Sci where id is 4
+
+UPDATE student
+SET major = 'Biochemistry'
+WHERE major = 'Bio' OR major = 'Chemistry';
+
+UPDATE student
+SET name = 'Tom', major = 'undecided'
+WHERE student_id = 1;
+
+UPDATE student
+SET name = 'Tom', major = 'undecided';  // going to apply for ALL ROWS!!!
+
+DELETE FROM student;    // Delete ALL
+
+DELETE FROM student
+WHERE student_id = 5;
+
+DELETE FROM student
+WHERE name = 'Tom' AND major = 'undecided';
