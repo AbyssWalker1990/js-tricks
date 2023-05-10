@@ -46,3 +46,22 @@ student_id	name	major
 3           Vova    null
 
 -----------------------------------------------------------------------------
+
+CONSTRAINTS:
+
+CREATE TABLE student (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,  // Cant store NULL now
+    major VARCHAR(20) UNIQUE  // cant have duplicate
+);
+
+CREATE TABLE student (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,  // now id incrementing auto
+    name VARCHAR(20), 
+    major VARCHAR(20) DEFAULT 'undecided'  //  HAVE DEFAULT VALUE NOW 
+);
+
+Example INSERT with AUTO_INCREMENT:
+
+INSERT INTO student(name, major) VALUES('Jack', 'Biology');         // id will be 1
+INSERT INTO student(name, major) VALUES('Kate', 'Sociology');       // id will be 2
