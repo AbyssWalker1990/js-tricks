@@ -22,6 +22,27 @@ DROP TABLE student;  // delete TABLE
 ALTER TABLE student ADD gpa DECIMAL(3, 2);  // add column gpa
 
 ALTER TABLE student DROP COLUMN gpa;    // delete column gpa
+-----------------------------------------------------------------------------
 
+INSERT operations:
 
+INSERT INTO student VALUES(1, 'Jack', 'Biology');
+INSERT INTO student VALUES(2, 'Kate', 'Sociology');
 
+RESULT:
+student_id	name	major
+1	        Jack	Biology
+2	        Kate	Sociology
+
+-----------------------------------------------------------------------------
+PART INSERT:
+
+INSERT INTO student(student_id, name) VALUES(3, 'Vova');
+
+RESULT: 
+student_id	name	major
+1	        Jack	Biology
+2	        Kate	Sociology
+3           Vova    null
+
+-----------------------------------------------------------------------------
