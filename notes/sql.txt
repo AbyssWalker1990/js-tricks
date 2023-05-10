@@ -127,3 +127,22 @@ WHERE major <> 'Biology';   // NOT EQUAL
 SELECT *
 FROM student
 WHERE name IN ('Claire', 'Kate', 'Mike');  // Shows all when we have corresponding names
+
+-------------------------------------------------------------
+FOREIGHN KEY:
+CREATE TABLE branch (
+  branch_id INT PRIMARY KEY,
+  branch_name VARCHAR(40),
+  mgr_id INT,
+  mgr_start_date DATE,
+  FOREIGN KEY(mgr_id) REFERENCES employee(emp_id) ON DELETE SET NULL
+);
+
+CREATE TABLE works_with (
+  emp_id INT,
+  client_id INT,
+  total_sales INT,
+  PRIMARY KEY(emp_id, client_id),  // COMPOSITE PRIMARY KEY
+  FOREIGN KEY(emp_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
+  FOREIGN KEY(client_id) REFERENCES client(client_id) ON DELETE CASCADE
+);
