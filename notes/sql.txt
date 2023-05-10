@@ -96,3 +96,34 @@ WHERE student_id = 5;
 
 DELETE FROM student
 WHERE name = 'Tom' AND major = 'undecided';
+------------------------------------------------------------------------
+
+BASIC QUERIES:
+
+SELECT name FROM student;
+SELECT name, major FROM student;
+SELECT student.name, student.major FROM student;
+
+SELECT student.name, student.major 
+FROM student
+ORDER BY name DESC;  // Ordered by descending
+
+SELECT student.name, student.major 
+FROM student
+ORDER BY major, student_id;  // ordered by major first and then by id
+
+SELECT student.name, student.major 
+FROM student
+LIMIT 2;    // shows only 2 rows
+
+SELECT *
+FROM student
+WHERE major = 'Biology' OR name = 'Kate';
+
+SELECT *
+FROM student
+WHERE major <> 'Biology';   // NOT EQUAL
+
+SELECT *
+FROM student
+WHERE name IN ('Claire', 'Kate', 'Mike');  // Shows all when we have corresponding names
