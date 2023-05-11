@@ -156,3 +156,14 @@ FROM employee;
 SELECT DISTINCT sex   // shows only unique 
 FROM employee;
 
+-------------------------------------------------------------------
+FUNCTIONS:
+
+SELECT COUNT(emp_id)  // counts how many employees in the table
+FROM employee;
+
+SELECT COUNT(emp_id)
+FROM employee
+WHERE sex = 'F' AND birth_day > '1970-01-01';  // counts only females that was born after 1970-01-01
+
+
