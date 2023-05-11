@@ -146,3 +146,13 @@ CREATE TABLE works_with (
   FOREIGN KEY(emp_id) REFERENCES employee(emp_id) ON DELETE CASCADE,
   FOREIGN KEY(client_id) REFERENCES client(client_id) ON DELETE CASCADE
 );
+
+------------------------------------------------------------------
+MORE BASIC QUERIES
+
+SELECT first_name AS forename, last_name  // shows first_name as forename
+FROM employee;
+
+SELECT DISTINCT sex   // shows only unique 
+FROM employee;
+
