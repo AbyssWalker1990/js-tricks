@@ -197,4 +197,21 @@ SELECT *
 FROM employee
 WHERE birth_day LIKE '____-02-%'; shows all employee with birthday in february
 
+-----------------------------------------------------------
+UNION:
+
+SELECT first_name
+FROM employee
+UNION
+SELECT branch_name
+FROM branch; // Shows employee names and branches in SINGLE COLUMN
+
+
+SELECT client_name, branch_id
+FROM client
+UNION
+SELECT supplier_name, branch_id
+FROM branch_supplier; // Shows all client and suppliers with branch id
+
+
 
