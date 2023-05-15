@@ -267,4 +267,45 @@ WHERE client.branch_id IN (
 ----------------------------------------------------------
 
 ON DELETE CASCADE   // delete entire row
-ON DELETE SET NULL  // Set to null, but doesnt work if it is primary key
+ON DELETE SET NULL  // Set to null, but doesnt work if it is primary KEY
+
+----------------------------------------------------------
+
+TRIGGERS:
+
+For defining a trigger we must to change delimiter from ; to another because of need to not stop execution
+on a description action that will be performed when trigger activated
+Also we need to use CLI, because popsql can not chabge the delimiter
+
+DELIMITER $$  // change delimiter
+
+CREATE
+    TRIGGER my_trigger BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        INSERT INTO trigger_test VALUES('added new employee');  // insert value in trigger_test before inserting new employee
+    END $$
+
+DELIMITER ;
+
+CREATE
+    TRIGGER my_trigger1 BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        INSERT INTO trigger_test VALUES(NEW.first_name); // new refers to inserted row
+    END $$
+
+CREATE
+    TRIGGER my_trigger2 BEFORE INSERT
+    ON employee
+    FOR EACH ROW BEGIN
+        IF NEW.sex = 'M' THEN
+            INSERT INTO trigger_test VALUES('added male employee');
+        ELSEIF NEW.sex = 'F' THEN
+            INSERT INTO trigger_test VALUES('added female employee');
+        ELSE
+            INSERT INTO trigger_test VALUES('added other employee');
+        END IF;
+    END $$  // using if statements
+
+DROP TRIGGER my_trigger;  // delete trigger
