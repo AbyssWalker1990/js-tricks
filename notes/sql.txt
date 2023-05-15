@@ -264,4 +264,7 @@ WHERE client.branch_id IN (
     )
 ); // Shows all client that related to Michael Scott branch
 
+----------------------------------------------------------
 
+ON DELETE CASCADE   // delete entire row
+ON DELETE SET NULL  // Set to null, but doesnt work if it is primary key
