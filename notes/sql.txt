@@ -309,3 +309,36 @@ CREATE
     END $$  // using if statements
 
 DROP TRIGGER my_trigger;  // delete trigger
+
+-----------------------------------------------------
+
+ER(Entity Relationship) Diagrams
+
+Entity(square) - an object we want to model and store info about
+Attributes(ovals) - specific piece of info about an Entity
+Primary Key(ovals with underline) - an attribute(s) that uniquely isentify an entry in the db table
+Composite Attribute - an attribute that can be broken up into sub-attributes
+Multi-value Attribute(oval with extra circle) - can have more than 1 value
+Derived Attribute (oval dash lines) - can be derived from another attributes
+
+Multiple Entities - we can define more than 1 entity in diagram
+Relationships(romb) - defines a Relationship between 2 Entities
+Total participation (double lines) - all members must participate in Relationships
+Partial participation (single line)
+Relationship Attribute - attr about Relationship
+
+Relationship Cardinality - the number of instances of an entity from a Relation
+that can be associated with the Relation
+Example:
+Student(Entity)-----1-----Takes(Relationsip)-----1-----Class(Entity)
+1 student can take 1 Class
+
+Student(Entity)-----1-----Takes(Relationsip)-----N-----Class(Entity)
+Studen can take 1 class, class could be taken by many students
+
+Student(Entity)-----N-----Takes(Relationsip)-----M-----Class(Entity)
+student can take any number of classes and reverse
+
+Weak Entity(double line squre) - An entity that can not be uniquely identified by its attr alone
+Identifying Relationship(double line romb) - serves to uniquely identify the weak entity
+
