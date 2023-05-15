@@ -213,5 +213,32 @@ UNION
 SELECT supplier_name, branch_id
 FROM branch_supplier; // Shows all client and suppliers with branch id
 
+------------------------------------------------------------
+JOIN:
+
+1. EXAMPLE of INNER JOIN - we have column that shared by 2 tables
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+JOIN branch
+ON employee.emp_id = branch.mgr_id; // Combine 2 tables using similar emp_id and mgr_id
+// It shows to us only managers of branches!
+
+2. EXAMPLE of LEFT JOIN
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+LEFT JOIN branch
+ON employee.emp_id = branch.mgr_id;
+// It shows ALL employees but branch column will have NULL with emplyyees that are not managers
+
+3. EXAMPLE of RIGHT JOIN
+
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+RIGHT JOIN branch
+ON employee.emp_id = branch.mgr_id;
+// It shows all branches name, but will set managers to NULL if it havent one
+
 
 
