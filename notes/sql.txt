@@ -240,5 +240,28 @@ RIGHT JOIN branch
 ON employee.emp_id = branch.mgr_id;
 // It shows all branches name, but will set managers to NULL if it havent one
 
+---------------------------------------------------------------
+
+NESTED QUERIES:
+
+SELECT employee.first_name, employee.last_name
+FROM employee
+WHERE employee.emp_id IN (
+    SELECT works_with.emp_id
+    FROM works_with
+    WHERE works_with.total_sales > 30000
+);  // Shows employees names who sold goods more than 30000 to single client
+
+SELECT client.client_name
+FROM client
+WHERE client.branch_id IN (
+    SELECT branch.branch_id
+    FROM branch
+    WHERE branch.mgr_id IN (
+        SELECT employee.emp_id
+        from employee
+        WHERE employee.first_name = 'Michael' && employee.last_name = 'Scott'
+    )
+); // Shows all client that related to Michael Scott branch
 
 
