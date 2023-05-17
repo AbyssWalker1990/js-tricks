@@ -1,8 +1,28 @@
-Jenkins start in DOCKER:
-docker run -p 8080:8080 -p 50000 50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+1. Jenkins start in DOCKER:
+docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
 Explanation:
     Expose port 8080 - by default runs on that port
     Expose port 50000 - Master /Slave Communication
     Run in detached mode - run container in background
     Bind named volumes - persist data of Jenkins
-    
+
+
+2. We need to watch logs
+docker logs container_id
+Find the PASSWORD to proceed the installation
+Enter this password in http://localhost:8080
+
+3. Install plugins
+Create user
+
+Types of Jenkins Projects
+FREESTYLE:
+    simple, single tasks e.g run tests
+PIPELINE:
+    Whole delivery cycle e.g. test | build | ... for a singlr branch
+MULTIBRANCH PIPELINE
+    Like pipeline for multiple branches
+------------------------------------------------
+
+Create Multibranch pipeline
+
