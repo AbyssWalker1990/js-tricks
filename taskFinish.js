@@ -1,4 +1,3 @@
-// Input data
 const input = [
   {
     "nodeId": "4",
@@ -96,65 +95,19 @@ class NodeSorter {
 
 }
 
-const nodeSorter = new NodeSorter(input)
-nodeSorter.sortNodes()
-// console.log(nodeSorter.sortedNodes)
-nodeSorter.showOutput()
-
-
-// Sort nodes based on hierarchy and previous siblings
-input.sort((a, b) => {
-  const parentA = input.find(node => node.nodeId === a.parentId);
-  const parentB = input.find(node => node.nodeId === b.parentId);
-
-  if (parentA === parentB) {
-    const prevSiblingA = input.find(node => node.nodeId === a.previousSiblingId);
-    const prevSiblingB = input.find(node => node.nodeId === b.previousSiblingId);
-
-    if (prevSiblingA === prevSiblingB) {
-      return a.nodeId.localeCompare(b.nodeId);
-    }
-
-    if (!prevSiblingA) return 1;
-    if (!prevSiblingB) return -1;
-
-    return prevSiblingA.nodeId.localeCompare(prevSiblingB.nodeId);
+class InputChecker {
+  constructor(nodeArr) {
+    this.nodeArr = nodeArr
   }
 
-  if (!parentA) return -1;
-  if (!parentB) return 1;
+  isValidInput =() => {
+    this.nodeArr.forEach(node => {
+      if (typeof Number(node.nodeId) !== 'number') throw new Error('Invalid nodeId')
 
-  return parentA.nodeId.localeCompare(parentB.nodeId);
-});
-
-// Process input and generate output
-const output = [];
-
-// Function to recursively build the tree structure
-function buildTree(nodeId, parentId) {
-  const children = input
-    .filter(node => node.parentId === nodeId)
-    .map(node => {
-      return {
-        ...node,
-        children: buildTree(node.nodeId, node.parentId)
-      };
-    });
-
-  return children;
+    })
+  }
 }
 
-// Build the tree structure starting from the root nodes
-const roots = input.filter(node => !node.parentId && !node.previousSiblingId);
-
-for (const root of roots) {
-  const node = {
-    ...root,
-    children: buildTree(root.nodeId, root.parentId)
-  };
-  output.push(node);
-}
-
-// // Output data
-// console.log(JSON.stringify(output, null, 2));
-// console.log('Input: ', input)
+const nodeSorter = new NodeSorter(input)
+nodeSorter.sortNodes()
+// nodeSorter.showOutput()

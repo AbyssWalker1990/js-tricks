@@ -101,5 +101,5 @@ for (const root of roots) {
   output.push(node);
 }
 
-// Output data
-// console.log(JSON.stringify(output, null, 2));
+
+console.log(JSON.stringify(output, null, 2));
