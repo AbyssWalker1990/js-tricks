@@ -1,0 +1,8 @@
+Jenkins start in DOCKER:
+docker run -p 8080:8080 -p 50000 50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
+Explanation:
+    Expose port 8080 - by default runs on that port
+    Expose port 50000 - Master /Slave Communication
+    Run in detached mode - run container in background
+    Bind named volumes - persist data of Jenkins
+    
