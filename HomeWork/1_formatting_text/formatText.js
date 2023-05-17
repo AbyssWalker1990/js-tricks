@@ -8,7 +8,7 @@ const countTotalSumOfSymbols = async (dirPath) => {
     let result = await countSumOfSymbols(fileName)
     sumArr += result
   }
-  console.log(sumArr)
+  return sumArr
 }
 
 const getFileNames = async function (dirPath) {
@@ -30,4 +30,3 @@ const countSumOfSymbols = async (inputFile) => {
 }
 
 
-countTotalSumOfSymbols(path.join(__dirname, 'data'))

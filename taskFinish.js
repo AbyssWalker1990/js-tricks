@@ -47,67 +47,88 @@ const input = [
     "parentId": null,
     "previousSiblingId": "3"
   }
-];
+]
 
 class NodeSorter {
   #sortedNodes
-  constructor(nodeArr) {
-    this.nodeArr = structuredClone(nodeArr)
+  constructor(unsortedNodes) {
+    this.unsortedNodes = structuredClone(unsortedNodes)
     this.#sortedNodes = []
     this.inputChecker = new InputChecker()
-    this.inputChecker.isValidInput(this.nodeArr)
   }
 
-  sortNodes = function () {
-    this.#buildRoots(this.nodeArr)
+  sortNodes = () => {
+    this.#handleInputErrors()
+    this.#buildRoots()
+    return this.#getOutputAsArray()
   }
 
   showOutput = () => {
     console.log(JSON.stringify(this.#sortedNodes, null, 2))
   }
 
-  #buildRoots = (nodes) => {
-    const roots = input.filter(node => !node.parentId);
+  // Constructing the base layer with parents node
+  #buildRoots = () => {
+    const roots = this.unsortedNodes.filter(node => !node.parentId)
     roots.sort(this.#sortBySiblings)
+    this.#removeSettledNodes(roots) // Can remove settled parent nodes and decrease count of further iterations
     for (const root of roots) {
-      const node = this.#buildTree(root);
-      this.#sortedNodes.push(node);
+      const node = this.#buildTree(root)
+      this.#sortedNodes.push(node)
     }
   }
 
   #buildTree = (node) => {
     const { nodeId } = node;
-    const children = this.nodeArr
+    const children = this.unsortedNodes
       .filter(child => child.parentId === nodeId)
-      .map(child => this.#buildTree(child));
+      .map(child => this.#buildTree(child))
+   
     children.sort(this.#sortBySiblings)
-
     const outputNode = {
       ...node,
       children
-    };
+    }
+ 
     return outputNode; 
   }
 
   #sortBySiblings = (a, b) => {
-    if (a.previousSiblingId === null) return -1;
-    if (b.previousSiblingId === null) return 1;
-    return b.previousSiblingId - a.previousSiblingId;
+    if (a.previousSiblingId === null) return -1
+    if (b.previousSiblingId === null) return 1
+    return b.previousSiblingId - a.previousSiblingId
   }
 
+  #removeSettledNodes = (settledNodes) => {
+    settledNodes.forEach(node => this.unsortedNodes.splice(this.unsortedNodes.indexOf(node), 1))
+  }
+
+  // Just want to separate error handling 
+  #handleInputErrors = () => {
+    try {
+      this.inputChecker.isValidInput(this.unsortedNodes)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  #getOutputAsArray = () => {
+    return this.#sortedNodes
+  }
 }
 
+// Checking types of crucial properties for building tree
 class InputChecker {
   isValidInput = (input) => {
     input.forEach(node => {
-      console.log(Number(node.nodeId))
       if (isNaN(Number(node.nodeId))) throw new Error('Invalid type of nodeId')
       if (isNaN(Number(node.parentId))) throw new Error('Invalid type of parentId')
-      console.log('input OK')
+      if (isNaN(Number(node.previousSiblingId))) throw new Error('Invalid type of previousSiblingId')
     })
   }
 }
 
 const nodeSorter = new NodeSorter(input)
-nodeSorter.sortNodes()
+const result = nodeSorter.sortNodes()
 nodeSorter.showOutput()
+
