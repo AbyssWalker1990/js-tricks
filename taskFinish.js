@@ -54,6 +54,8 @@ class NodeSorter {
   constructor(nodeArr) {
     this.nodeArr = structuredClone(nodeArr)
     this.#sortedNodes = []
+    this.inputChecker = new InputChecker()
+    this.inputChecker.isValidInput(this.nodeArr)
   }
 
   sortNodes = function () {
@@ -96,18 +98,16 @@ class NodeSorter {
 }
 
 class InputChecker {
-  constructor(nodeArr) {
-    this.nodeArr = nodeArr
-  }
-
-  isValidInput =() => {
-    this.nodeArr.forEach(node => {
-      if (typeof Number(node.nodeId) !== 'number') throw new Error('Invalid nodeId')
-
+  isValidInput = (input) => {
+    input.forEach(node => {
+      console.log(Number(node.nodeId))
+      if (isNaN(Number(node.nodeId))) throw new Error('Invalid type of nodeId')
+      if (isNaN(Number(node.parentId))) throw new Error('Invalid type of parentId')
+      console.log('input OK')
     })
   }
 }
 
 const nodeSorter = new NodeSorter(input)
 nodeSorter.sortNodes()
-// nodeSorter.showOutput()
+nodeSorter.showOutput()
