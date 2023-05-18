@@ -54,7 +54,7 @@ class NodeSorter {
   constructor(unsortedNodes) {
     this.unsortedNodes = structuredClone(unsortedNodes)
     this.#sortedNodes = []
-    this.inputChecker = new InputChecker()
+    this.inputChecker = new InputChecker(this.unsortedNodes)
   }
 
   sortNodes = () => {
@@ -119,13 +119,13 @@ class NodeSorter {
 
 // Checking types of crucial properties for building tree
 class InputChecker {
-  constructor(nodeArr) {
-    this.nodeArr = nodeArr
+  constructor(inputNodes) {
+    this.inputNodes = inputNodes
   }
 
-  isValidInput =() => {
-    this.nodeArr.forEach(node => {
-      if (typeof Number(node.nodeId) !== 'number') throw new Error('Invalid nodeId')
+  isValidInput = () => {
+    this.inputNodes.forEach(node => {
+      if (isNaN(Number(node.nodeId))) throw new Error('Invalid nodeId')
       if (isNaN(Number(node.parentId))) throw new Error('Invalid type of parentId')
       if (isNaN(Number(node.previousSiblingId))) throw new Error('Invalid type of previousSiblingId')
     })
