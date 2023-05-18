@@ -47,7 +47,7 @@ const input = [
     "parentId": null,
     "previousSiblingId": "3"
   }
-];
+]
 
 class NodeSorter {
   #sortedNodes
@@ -65,32 +65,36 @@ class NodeSorter {
   }
 
   #buildRoots = (nodes) => {
-    const roots = input.filter(node => !node.parentId);
+    const roots = input.filter(node => !node.parentId)
     roots.sort(this.#sortBySiblings)
+    this.#initBranches(roots)
+  }
+
+  #initBranches = (roots) => {
     for (const root of roots) {
-      const node = this.#buildTree(root);
-      this.#sortedNodes.push(node);
+      const node = this.#buildBranch(root)
+      this.#sortedNodes.push(node)
     }
   }
 
-  #buildTree = (node) => {
+  #buildBranch = (node) => {
     const { nodeId } = node;
     const children = this.nodeArr
       .filter(child => child.parentId === nodeId)
-      .map(child => this.#buildTree(child));
+      .map(child => this.#buildBranch(child))
     children.sort(this.#sortBySiblings)
 
     const outputNode = {
       ...node,
       children
-    };
-    return outputNode; 
+    }
+    return outputNode
   }
 
   #sortBySiblings = (a, b) => {
-    if (a.previousSiblingId === null) return -1;
-    if (b.previousSiblingId === null) return 1;
-    return b.previousSiblingId - a.previousSiblingId;
+    if (a.previousSiblingId === null) return -1
+    if (b.previousSiblingId === null) return 1
+    return b.previousSiblingId - a.previousSiblingId
   }
 
 }
@@ -103,11 +107,13 @@ class InputChecker {
   isValidInput =() => {
     this.nodeArr.forEach(node => {
       if (typeof Number(node.nodeId) !== 'number') throw new Error('Invalid nodeId')
-
+      if (isNaN(Number(node.parentId))) throw new Error('Invalid type of parentId')
+      if (isNaN(Number(node.previousSiblingId))) throw new Error('Invalid type of previousSiblingId')
     })
   }
 }
 
+
 const nodeSorter = new NodeSorter(input)
 nodeSorter.sortNodes()
-// nodeSorter.showOutput()
+nodeSorter.showOutput()
