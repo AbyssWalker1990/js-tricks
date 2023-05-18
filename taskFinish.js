@@ -51,13 +51,16 @@ const input = [
 
 class NodeSorter {
   #sortedNodes
-  constructor(nodeArr) {
-    this.nodeArr = structuredClone(nodeArr)
+  constructor(unsortedNodes) {
+    this.unsortedNodes = structuredClone(unsortedNodes)
     this.#sortedNodes = []
+    this.inputChecker = new InputChecker()
   }
 
-  sortNodes = function () {
-    this.#buildRoots(this.nodeArr)
+  sortNodes = () => {
+    this.#handleInputErrors()
+    this.#buildRoots()
+    return this.#getOutputAsArray()
   }
 
   showOutput = () => {
@@ -79,11 +82,10 @@ class NodeSorter {
 
   #buildBranch = (node) => {
     const { nodeId } = node;
-    const children = this.nodeArr
+    const children = this.unsortedNodes
       .filter(child => child.parentId === nodeId)
       .map(child => this.#buildBranch(child))
     children.sort(this.#sortBySiblings)
-
     const outputNode = {
       ...node,
       children
@@ -97,8 +99,25 @@ class NodeSorter {
     return b.previousSiblingId - a.previousSiblingId
   }
 
+  #removeSettledNodes = (settledNodes) => {
+    settledNodes.forEach(node => this.unsortedNodes.splice(this.unsortedNodes.indexOf(node), 1))
+  }
+
+  // Just want to separate error handling 
+  #handleInputErrors = () => {
+    try {
+      this.inputChecker.isValidInput(this.unsortedNodes)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  #getOutputAsArray = () => {
+    return this.#sortedNodes
+  }
 }
 
+// Checking types of crucial properties for building tree
 class InputChecker {
   constructor(nodeArr) {
     this.nodeArr = nodeArr
