@@ -25,7 +25,57 @@ MULTIBRANCH PIPELINE
 ------------------------------------------------
 
 Create Multibranch pipeline
-1. need to create credentials to have access to git repository
+1. Need to create credentials to have access to git repository
 2. Need to configure what branches jenkins will process, for example by name with regular expression:
     ^main|dev|feature*$
+3. Create Jenkinsfile with Scripted or Declarative Syntax
+    SCRIPTED:
+        - First Syntax
+        - Groovy engine
+        - Advanced scripted capabilities, high flexibility
+        - difficult to start
+    DECLARATIVE:
+        - Recent Edition
+        - Easier to get started, but not that powerful
+        - Pre-defined structure
+We will use Declarative! Example:
 
+pipeline { // must be top level
+
+    agent any   // where to execute
+
+    stages {    // where the work happens
+
+        stage("build") {
+
+            steps {
+                echo 'building the application...'
+            }
+        }
+
+        stage("test") {
+
+            steps {
+                echo 'testing the application...'
+            }
+        }
+
+        stage("deploy") {
+
+            steps {
+                echo 'deploying the application...'
+            }
+        }
+    }
+}
+4. Now jenkins can recognize that file and execute all code from it
+Also now we can access to created branch with jenkins file from UI and check
+statisticks or run processing pipeline manually
+5. Handy tip - if we want to test something in Jenkinsfile - we can access to last build
+in history and replay it with our changes.
+For example just insert into steps:
+script {
+    def test = 2 + 2 > 4 ? 'cool' : 'not cool'
+    echo test
+}
+6. We can restart build from choosed stage skipping all previous by Restart from Stage option
