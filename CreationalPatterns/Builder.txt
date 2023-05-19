@@ -1,0 +1,8 @@
+Builder - creational design pattern that lets ypu construct complex object step-by-step
+
+Problem:
+We need to construct really complex object.
+Bad ways:
+    1. We can deal with it by creating maby subclasses
+    2. We can create giant constructor
+
