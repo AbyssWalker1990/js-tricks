@@ -25,4 +25,7 @@ MULTIBRANCH PIPELINE
 ------------------------------------------------
 
 Create Multibranch pipeline
+1. need to create credentials to have access to git repository
+2. Need to configure what branches jenkins will process, for example by name with regular expression:
+    ^main|dev|feature*$
 
