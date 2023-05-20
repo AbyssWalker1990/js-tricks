@@ -1,7 +1,7 @@
 export interface Builder {
-  buildRoots(nodesArr: NodeObject[]): void
-  initBranches(): void
-  buildBranch(): NodeObject
+  buildRoots(): NodeObject[]
+  initBranches(roots: NodeObject[]): void
+  buildBranch(rootNode: NodeObject): NodeObject
 }
 
 export type NodeObject = {

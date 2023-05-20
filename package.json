@@ -5,7 +5,8 @@
   "main": "complexTernary.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "builder": "node ./dist/CreationalPatterns/Builder/BuilderExample.js"
+    "builder": "node ./dist/CreationalPatterns/Builder/BuilderExample.js",
+    "node-tree": "node ./dist/CreationalPatterns/node-builder/main.js"
   },
   "author": "",
   "license": "ISC",
