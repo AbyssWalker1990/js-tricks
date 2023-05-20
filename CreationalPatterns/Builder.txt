@@ -1,8 +1,36 @@
-Builder - creational design pattern that lets ypu construct complex object step-by-step
+Builder - creational design pattern that lets you construct complex object step-by-step
 
 Problem:
 We need to construct really complex object.
 Bad ways:
     1. We can deal with it by creating maby subclasses
     2. We can create giant constructor
+
+Solution:
+    Move object construction code to separate objects called Builders
+
+Now, to create an object, we can execute a series of steps on a builder object.
+Different builders can implement building steps in a different manner to produce
+different kind of objects.
+
+DIRECTOR
+A class that defines the order in which to execute the building steps.
+
+STRUCTURE:
+1. The BUILDER INTERFACE declares product construction steps that are common to
+all types of builders.
+
+2. CONCRETE BUILDERS provide implementations of the construction steps.
+
+3. PRODUCTS constructed by different builders don't have belong to the same
+class hierarchy or interface.
+
+4. The DIRECTOR class defines the order in which to call construction steps.
+
+5. We must associate one of the BUILDER class objects with DIRECTOR.
+
+TIPS:
+A builder doesn’t expose the unfinished product while running construction steps
+
+
 

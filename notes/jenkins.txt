@@ -79,3 +79,5 @@ script {
     echo test
 }
 6. We can restart build from choosed stage skipping all previous by Restart from Stage option
+---------------------------------------
+Build automatically
