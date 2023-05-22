@@ -2,4 +2,9 @@ Terms:
     - Parent and child
     - Root - node that havent parent
     - Leaf - node that have no chilren
-    - Binary tree - every node have at most 2 childrengit
+
+    - Binary tree :
+        - every node have maximum 2 children
+        - exactly ONE root
+        - exactly ONE path from root to node
+
