@@ -1,0 +1,5 @@
+Terms:
+    - Parent and child
+    - Root - node that havent parent
+    - Leaf - node that have no chilren
+    - Binary tree - every node have at most 2 childrengit
