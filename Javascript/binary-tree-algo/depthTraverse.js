@@ -34,4 +34,12 @@ const depthFirstValues = (root) => {
   return result
 }
 
-console.log(depthFirstValues(a))
+const depthFirstValuesRecursive = (root) => {
+  if (root === null) return []
+  const leftValues = depthFirstValuesRecursive(root.left)
+  const rightValues = depthFirstValuesRecursive(root.right)
+  return [root.val, ...leftValues, ...rightValues]
+}
+
+// console.log(depthFirstValues(a))
+console.log(depthFirstValuesRecursive(a))
