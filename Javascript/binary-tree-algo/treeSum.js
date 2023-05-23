@@ -36,4 +36,29 @@ const depthFirstSum = (root) => {
   return sum
 }
 
-console.log(depthFirstSum(a))
+console.log('depthFirstSum: ', depthFirstSum(a))
+
+const breadthFirstSum = (root) => {
+  if (root === null) return 0
+  let sum = 0
+
+  const queue = [root]
+
+  while (queue.length > 0) {
+    const current = queue.shift()
+    sum += current.num
+
+    if (current.left) queue.push(current.left)
+    if (current.right) queue.push(current.right)
+  }
+  return sum
+}
+
+console.log('breadthFirstSum: ', breadthFirstSum(a))
+
+const recursiveTreeSum = (root) => {
+  if (root === null) return 0
+  return root.num + recursiveTreeSum(root.left) + recursiveTreeSum(root.right)
+}
+
+console.log('recursiveTreeSum: ', recursiveTreeSum(a))
