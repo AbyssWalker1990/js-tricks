@@ -15,4 +15,9 @@ Depth Traverse:
     Using recursion - define function that receive root node as parameter. Then define left and right values by recursively
     invoking this function and in return - form array with root value and left and right variables with spread operator.
 
+Breadth First Traverse:
+    Define a function with paraneter that will receive root node. We must use queue instead of stack. Create queue with
+    root node inside. Then in while loop we must shift first element from queqe and check for children. All children we 
+    just pushing in our queue and pushing result value to anothe result array
+
 
