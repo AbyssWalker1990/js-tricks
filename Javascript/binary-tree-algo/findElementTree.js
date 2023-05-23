@@ -35,4 +35,12 @@ const findBreadthFirst = (el, root) => {
   return false
 }
 
-console.log(findBreadthFirst('f', a))
+const findDepthFirstRecursive = (el, root) => {
+  if (root === null) return false
+  if (root.val === el) return true
+  return findDepthFirstRecursive(el, root.left) || findDepthFirstRecursive(el, root.right)
+
+}
+
+// console.log(findBreadthFirst('f', a))
+console.log(findDepthFirstRecursive('k', a))
