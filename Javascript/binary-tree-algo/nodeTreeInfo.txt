@@ -8,3 +8,11 @@ Terms:
         - exactly ONE root
         - exactly ONE path from root to node
 
+Depth Traverse:
+    Using stack(array obj) with stred root within. Then inside loop pop from it node and push value to result arr.
+    After this checks if there left or right children and push in to stack
+
+    Using recursion - define function that receive root node as parameter. Then define left and right values by recursively
+    invoking this function and in return - form array with root value and left and right variables with spread operator.
+
+
