@@ -1,0 +1,12 @@
+Definitions:
+Node - container for data
+Linked Lists - list of nodes that have a references
+
+Difference with arrays:
+Situation - we have array [a, b, c, d] and we need to insert element q in 2 position index
+Behind the scenes when we inserting our q element - we must to shift right all elements after this position
+
+But if we have linkes list like a -> b -> c -> d
+We must only define 2 pointers from b -> q ann 1 -> c 
+
+And with linked list it will be much faster and costs less effort
