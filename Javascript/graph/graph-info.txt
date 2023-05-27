@@ -1,0 +1,15 @@
+Graph = nodes + edges(arrows or directions)
+Graph can be directed and undirected
+
+DIRECTED:
+    Node can have "neighbour" - another node to which we can travel
+
+Example of adjancy list:
+{
+    a: [b, c],
+    b: [d],
+    c: [e],
+    d: [],
+    e: [b],
+    f: [d]
+}
