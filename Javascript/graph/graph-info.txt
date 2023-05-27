@@ -13,3 +13,5 @@ Example of adjancy list:
     e: [b],
     f: [d]
 }
+
+We can use Depth first and Breadth first traversal to travel across nodes
