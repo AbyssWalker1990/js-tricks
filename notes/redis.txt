@@ -28,4 +28,12 @@ SETS:
 SADD hobbies "weight lifting" // create set with 1 element
 SMEMBERS hobbies    // SHOW SET
 SREM hobbies "weight lifting" // delete from set
+
+HASHES:
+HSET person name vova // create HASHES
+HGET person name    // return "vova"
+HGETALL person  // return all INFO
+HDEL person age // delete property
+HEXISTS person name // check if EXISTS
+
 QUIT
