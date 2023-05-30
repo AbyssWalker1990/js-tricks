@@ -1,1 +1,13 @@
 We must try to define our scope in try-catch block. 
+
+Provide context with Exceptions:
+Create informative error messages and pass them along with your exceptions. Mention the operation that failed and the type of failure
+--------------------------------------------
+Don't return null:
+We must try to minimize null checking, instead we can return empty object
+-------------------------------------------
+Don't pass null:
+We must check if null passed as argument and define error for it
+--------------------------------------------
+
+
