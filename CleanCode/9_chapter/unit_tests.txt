@@ -1,0 +1,6 @@
+The 3 Laws of TDD:
+1. You may not write production code until you have written a failing unit test
+2. You may not write more of a unit test than is sufﬁcient to fail, and not compiling is failing
+3. You may not write more production code than is sufﬁcient to pass the currently failing test
+
+126
