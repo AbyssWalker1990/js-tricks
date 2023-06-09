@@ -1,0 +1,29 @@
+JAVASCRIPT:
+    JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles
+
+JAVASCRIPT ENGINES:
+    A JavaScript engine is a computer program that executes JavaScript code and converts it into computer understandable language
+    Examples: 
+        Google          Chrome V8
+        Edge            Chakra
+        Mozilla Firefox	Spider Monkey
+        Safari 	        Javascript Core Webkit
+    
+    V8 - developed by the Chromium Project for Google Chrome and Chromium web browsers. Can run standalone, or be embedded into any C++ application. V8 provides an edge as it allows JavaScript to run much faster, which improves users’ experience of the web, paves the way for the development of web applications, and spurs rapid growth of server-side JavaScript through projects like Node.js.
+
+    Chakra - developed by Microsoft. It is proprietary software. It is used in the Internet Explorer web browser. A distinctive feature of the engine is that it JIT compiles scripts on a separate CPU core, parallel to the web browser.
+
+    Spider Monkey - the first JavaScript engine, written by Brendan Eich at Netscape Communications, later released as open-source and currently maintained by the Mozilla Foundation. It is still used in the Firefox web browser.
+
+    Webkit - is developed by Apple and  used in its Safari web browser, as well as all iOS web browsers. It is  used by the BlackBerry Browser, PlayStation consoles beginning from the PS3, the Tizen mobile operating systems, and a browser included with the Amazon Kindle e-book reader
+
+JIT
+    Just In Time compiler
+    The compilation is done during execution
+    STEPS:
+        The monitor or profiler:
+            Detect which parts of your code are being used the most, and then it’ll send them over to be compiled and stored.
+        The baseline compiler:
+            The warm sections of your code will be compiled into bytecode. The baseline compilation will also try to optimize the code by creating “stubs” for every instruction being analyzed.
+        The optimizing compiler:
+            The optimizing compiler will take charge and turn all those isolated stubs into a group, essentially stubbing the whole function if required. This allows for the type checks to happen only once, before the function call, instead of on every loop

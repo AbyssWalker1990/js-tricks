@@ -1,0 +1,12 @@
+BROWSER WARS:
+    Netscape vs Explorer. Explorer Won. Firefox is a chils of Netscape. In 1998 Google become a participant.
+
+W3C:
+    World Wide Web Consortium. Is an international community where Member organizations, a full-time staff, and the public work together to develop Web standards. Led by Web inventor and Director Tim Berners-Lee, Interim CEO Ralph Swick and a Board of Directors, W3C's mission is to lead the Web to its full potential.
+    Most W3C work revolves around the standardization of Web technologies. To accomplish this work, W3C follows processes that promote the development of high-quality standards based on community consensus; an introduction to the W3C Process gives a sense of how W3C gets work done. All stakeholders have a voice in the development of W3C standards, including Members large and small, as well as the public. W3C processes promote fairness, responsiveness, and progress: all facets of the W3C mission.
+
+ECMA:
+    The core language of JavaScript is standardized by the ECMA TC39 committee as a language named ECMAScript. "ECMAScript" is the term for the language standard, but "ECMAScript" and "JavaScript" can be used interchangeably.
+
+WEB 2.0:
+    Web 2.0 is the second generation of the World Wide Web. It focuses on the web as a platform and offers more opportunities for collaboration, functionality, various applications, and user-generated content. It is the World Wide Web as it is used today
