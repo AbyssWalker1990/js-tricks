@@ -1,0 +1,5 @@
+Progressive Enhancement:
+    is when one builds a basic functional web application and progressively adds features to it when required to enhance its functionality.
+
+Graceful Degradation:
+    is where a customer is provided with an application with all the features but also makes the user aware of the shortcomings of a product to make the product still usable. So in this practice, the user gets an application that works on all modern browsers to provide a certain level of user experience, but it’ll gradually degrade to a lower level of user experience

@@ -1,0 +1,3 @@
+Primitive Data Types:
+    is data that is not an object and has no methods or properties. There are 7 primitive data types:
+    string, number, bigint, boolean, undefined, symbol, null

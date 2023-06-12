@@ -1,0 +1,2 @@
+JS Grammar:
+    is the set of rules, how JavaScript programs are constructed

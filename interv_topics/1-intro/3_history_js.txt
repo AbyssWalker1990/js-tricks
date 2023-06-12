@@ -10,3 +10,15 @@ ECMA:
 
 WEB 2.0:
     Web 2.0 is the second generation of the World Wide Web. It focuses on the web as a platform and offers more opportunities for collaboration, functionality, various applications, and user-generated content. It is the World Wide Web as it is used today
+
+
+HTML5:
+    HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and final[3] major HTML version that is a World Wide Web Consortium (W3C) recommendation. The current specification is known as the HTML Living Standard. HTML5 was first released in a public-facing form on 22 January 2008,[2] with a major update and "W3C Recommendation" status in October 2014
+
+Node.js:
+    Is an open-source, cross-platform JavaScript runtime environment. Node.js is built on top of the Google Chrome V8 JavaScript engine, and it's mainly used to create web servers - but it's not limited to just that.
+    A Node.js app runs in a single process, without creating a new thread for every request. Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking and generally, libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm
+
+Javascript Versions:
+    ECMAScript versions have been abbreviated to ES1, ES2, ES3, ES5, and ES6.
+    Since 2016, versions are named by year (ECMAScript 2016, 2017, 2018, 2019, 2020)
