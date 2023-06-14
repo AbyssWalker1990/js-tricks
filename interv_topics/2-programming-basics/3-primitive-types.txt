@@ -1,3 +1,29 @@
 Primitive Data Types:
     is data that is not an object and has no methods or properties. There are 7 primitive data types:
     string, number, bigint, boolean, undefined, symbol, null
+
+String 
+    Template literals --- string interpolation
+    Wrapper object for using methods. After the use, the wrapper object is disposed
+    Difference between slice() and substring():
+        These two methods are almost identical, except for a few differences. One of them is that if the first index passed to substring() is greater than the second index, the two arguments are exchanged so that a string is still returned. In the same scenario, the slice() method returns an empty string instead:
+    split() have optional second argument for maximum pieces
+
+    Iterator:
+    const str = 'The quick red fox jumped over the lazy dog\'s back.';
+
+    const iterator = str[Symbol.iterator]();
+    let theChar = iterator.next();
+
+    while (!theChar.done) {
+    console.log(theChar.value);
+    theChar = iterator.next();
+    // Expected output: "T"
+    //                  "h"
+    //                  "e"
+    //                   ...
+    }
+
+    String() works with null and undefined, but toString() will raise error
+-------------------------------------------------------------
+    Number
