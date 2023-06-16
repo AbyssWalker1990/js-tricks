@@ -1,3 +1,5 @@
-let mcs = 1e-6; // five zeroes to the left from 1
+const prompt = require('prompt-sync')({sigint: true})
 
-console.log(mcs)
+const readNumber = () => {
+    const input = prompt('Number: ', '')
+}

@@ -64,4 +64,66 @@ Number:
     toString(base)
     alert( 123456..toString(36) ); // 2n9c
 
-    Dont forget of MAth methods to round and toFixed(), that returns string
+    Dont forget of MAth methods to round (and toFixed(), that returns string)
+------------------------------------------
+    Imprecise calculations:
+    Internally, a number is represented in 64-bit format IEEE-754, so there are exactly 64 bits to store a number: 52 of them are used to store the digits, 11 of them store the position of the decimal point, and 1 bit is for the sign.
+
+    If a number is really huge, it may overflow the 64-bit storage and become a special numeric value Infinity:
+
+    // Hello! I'm a self-increasing number!
+    alert( 9999999999999999 ); // shows 1000000000000000
+
+    isNaN TRICK:
+    alert( NaN === NaN ); // false
+
+    isFinite TRICK:
+    Please note that an empty or a space-only string is treated as 0 in all numeric functions including isFinite
+
+    METHODS ARE NOT THE SAME!!!
+    Number.isNaN and Number.isFinite methods are the more “strict” versions of isNaN and isFinite functions. They do not autoconvert their argument into a number, but check if it belongs to the number type instead.
+    alert( Number.isNaN(NaN) ); // true
+    alert( Number.isNaN("str" / 2) ); // true
+
+    // Note the difference:
+    alert( Number.isNaN("str") ); // false, because "str" belongs to the string type, not the number type
+    alert( isNaN("str") ); // true, because isNaN converts string "str" into a number and gets NaN as a result of this conversion
+
+    alert( Number.isFinite(123) ); // true
+    alert( Number.isFinite(Infinity) ); // false
+    alert( Number.isFinite(2 / 0) ); // false
+
+    // Note the difference:
+    alert( Number.isFinite("123") ); // false, because "123" belongs to the string type, not the number type
+    alert( isFinite("123") ); // true, because isFinite converts string "123" into a number 123
+
+    Comparison with Object.is
+    It works with NaN: Object.is(NaN, NaN) === true, that’s a good thing.
+    Values 0 and -0 are different: Object.is(0, -0) === false, technically that’s correct, because internally the number has a sign bit that may be different even if all other bits are zeroes.
+    -----------------------------------------------
+
+    parseInt() and parseFloat():
+    alert( parseInt('100px') ); // 100
+    alert( parseFloat('12.5em') ); // 12.5
+
+    alert( parseInt('12.3') ); // 12, only the integer part is returned
+    alert( parseFloat('12.3.4') ); // 12.3, the second point stops the reading
+
+    alert( parseInt('a123') ); // NaN, the first symbol stops the process
+
+    alert( parseInt('0xff', 16) ); // 255
+    alert( parseInt('ff', 16) ); // 255, without 0x also works
+
+    alert( parseInt('2n9c', 36) ); // 123456
+    ----------------------------
+
+BigInt:
+    const bigint = 1234567890123456789012345678901234567890n;
+
+    const sameBigint = BigInt("1234567890123456789012345678901234567890");
+
+    const bigintFromNumber = BigInt(10); // same as 10n
+
+    Please note: the division 5/2 returns the result rounded towards zero, without the decimal part. All operations on bigints return bigints.
+
+    Cant mix with numbers
