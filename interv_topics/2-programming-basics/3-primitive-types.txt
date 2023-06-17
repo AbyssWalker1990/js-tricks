@@ -135,3 +135,89 @@ undefined:
 null:
 In JavaScript, null is not a “reference to a non-existing object” or a “null pointer” like in some other languages.
 It’s just a special value which represents “nothing”, “empty” or “value unknown”.
+-----------------------------------------------------
+Symbol:
+    A “symbol” represents a unique identifier.
+    let id1 = Symbol("id");
+    let id2 = Symbol("id");
+
+    alert(id1 == id2); // false 
+
+    Symbols don’t auto-convert to a string
+    let id = Symbol("id");
+    alert(id); // TypeError: Cannot convert a Symbol value to a string
+
+    let id = Symbol("id");
+    alert(id.toString()); // Symbol(id), now it works
+    alert(id.description); // id
+
+    HIDDEN PROPERTIES:
+    let user = { // belongs to another code
+        name: "John"
+    };
+
+    let id = Symbol("id");
+
+    user[id] = 1;
+
+    alert( user[id] ); // we can access the data using the symbol as the key
+--------------------------------------
+    Symbols in an object literal: needs []
+    let id = Symbol("id");
+
+    let user = {
+        name: "John",
+        [id]: 123 // not "id": 123
+    };
+---------------------------------------
+    !!!!!! Symbols are skipped by for…in !!!!!!!
+    Object.keys(user) also ignores them
+    In contrast, Object.assign copies both string and symbol properties:
+
+    let id = Symbol("id");
+    let user = {
+        [id]: 123
+    };
+
+    let clone = Object.assign({}, user);
+
+    alert( clone[id] ); // 123
+-----------------------------------------
+Global Symbols:
+    // read from the global registry
+    let id = Symbol.for("id"); // if the symbol did not exist, it is created
+
+    // read it again (maybe from another part of the code)
+    let idAgain = Symbol.for("id");
+
+    // the same symbol
+    alert( id === idAgain ); // true
+---------------------------------------
+Symbol.keyFor()
+    // get symbol by name
+    let sym = Symbol.for("name");
+    let sym2 = Symbol.for("id");
+
+    // get name by symbol
+    alert( Symbol.keyFor(sym) ); // name
+    alert( Symbol.keyFor(sym2) ); // id
+
+    it doesn’t work for non-global symbols. If the symbol is not global, it won’t be able to find it and returns undefined.
+
+    let globalSymbol = Symbol.for("name");
+    let localSymbol = Symbol("name");
+
+    alert( Symbol.keyFor(globalSymbol) ); // name, global symbol
+    alert( Symbol.keyFor(localSymbol) ); // undefined, not global
+
+    alert( localSymbol.description ); // name
+---------------------------------------
+System Symbols:
+    Symbol.hasInstance
+    Symbol.isConcatSpreadable
+    Symbol.iterator
+    Symbol.toPrimitive
+    …and so on.
+
+TIPS:
+    Technically, symbols are not 100% hidden. There is a built-in method Object.getOwnPropertySymbols(obj) that allows us to get all symbols. Also there is a method named Reflect.ownKeys(obj) that returns all keys of an object including symbolic ones. But most libraries, built-in functions and syntax constructs don’t use these methods
