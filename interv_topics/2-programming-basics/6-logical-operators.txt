@@ -1,0 +1,101 @@
+Logical operators:
+    || (OR), && (AND), ! (NOT), ?? (Nullish Coalescing)
+
+OR ||
+    alert( true || true );   // true
+    alert( false || true );  // true
+    alert( true || false );  // true
+    alert( false || false ); // false
+
+OR "||" finds the first truthy value:
+    alert( 1 || 0 ); // 1 (1 is truthy)
+
+    alert( null || 1 ); // 1 (1 is the first truthy value)
+    alert( null || 0 || 1 ); // 1 (the first truthy value)
+
+    alert( undefined || null || 0 ); // 0 (all falsy, returns the last value)
+
+Example:
+    let firstName = "";
+    let lastName = "";
+    let nickName = "SuperCoder";
+
+    alert( firstName || lastName || nickName || "Anonymous"); // SuperCoder
+
+Short-circuit evaluation:
+    true || alert("not printed");
+    false || alert("printed");
+    In the first line, the OR || operator stops the evaluation immediately upon seeing true, so the alert isn’t run.
+---------------------------------------------
+AND &&:
+    alert( true && true );   // true
+    alert( false && true );  // false
+    alert( true && false );  // false
+    alert( false && false ); // false
+
+returns the first falsy value
+
+// if the first operand is truthy,
+// AND returns the second operand:
+    alert( 1 && 0 ); // 0
+    alert( 1 && 5 ); // 5
+
+    // if the first operand is falsy,
+    // AND returns it. The second operand is ignored
+    alert( null && 5 ); // null
+    alert( 0 && "no matter what" ); // 0
+    alert( 1 && 2 && null && 3 ); // null
+    
+    When all values are truthy, the last value is returned:
+    alert( 1 && 2 && 3 ); // 3, the last one
+
+!!!!!!!  Precedence of AND && is higher than OR || !!!!!!!!!!!
+--------------------------------------------
+! (NOT):
+    alert( !true ); // false
+    alert( !0 ); // true
+
+A double NOT !! is sometimes used for converting a value to boolean type:
+    alert( !!"non-empty string" ); // true
+    alert( !!null ); // false
+
+!!!!!!! The precedence of NOT ! is the highest of all logical operators !!!!!!!
+--------------------------------------------
+Nullish coalescing operator '??':
+
+We can rewrite result = a ?? b using the operators that we already know, like this:
+result = (a !== null && a !== undefined) ? a : b;
+
+Example: 
+    let user = "John";
+    alert(user ?? "Anonymous"); // John (user is not null/undefined)
+
+Example 2:
+    let firstName = null;
+    let lastName = null;
+    let nickName = "Supercoder";
+
+    // shows the first defined value:
+    alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
+
+Main difference with OR:
+    || returns the first truthy value.
+    ?? returns the first defined value.
+
+Example:
+    let height = 0;
+    alert(height || 100); // 100
+    alert(height ?? 100); // 0
+
+Precedence
+The precedence of the ?? operator is the same as ||. They both equal 3 in the MDN table.
+
+That means that, just like ||, the nullish coalescing operator ?? is evaluated before = and ?, but after most other operations, such as +, *.
+---------------------------
+Using ?? with && or ||:
+    let x = 1 && 2 ?? 3; // Syntax error
+
+    Use explicit parentheses to work around it:
+    let x = (1 && 2) ?? 3; // Works
+    alert(x); // 2
+
