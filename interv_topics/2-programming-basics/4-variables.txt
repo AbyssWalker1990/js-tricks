@@ -1,0 +1,44 @@
+Variable:
+    A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.
+
+var:
+    “var” has no block scope
+    If a code block is inside a function, then var becomes a function-level variable
+    “var” tolerates redeclarations:
+        let user;
+        let user; // SyntaxError: 'user' has already been declared  
+        But
+        var user = "Pete";
+
+        var user = "John"; // this "var" does nothing (already declared)
+        // ...it doesn't trigger an error
+
+        alert(user); // John
+
+An assignment without use strict
+    // note: no "use strict" in this example
+    num = 5; // the variable "num" is created if it didn't exist
+    alert(num); // 5
+
+    WITH 'use strict'
+    "use strict";
+    num = 5; // error: num is not defined
+
+TIPS:
+// Ways to create IIFE
+
+(function() {
+  alert("Parentheses around the function");
+})();
+
+(function() {
+  alert("Parentheses around the whole thing");
+}());
+
+!function() {
+  alert("Bitwise NOT operator starts the expression");
+}();
+
++function() {
+  alert("Unary plus starts the expression");
+}();
