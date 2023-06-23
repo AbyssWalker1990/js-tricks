@@ -1,5 +1,10 @@
-const prompt = require('prompt-sync')({sigint: true})
+const a = 0b11111111
+const b = ~a
+console.log(a)
+console.log(b)
 
-const readNumber = () => {
-    const input = prompt('Number: ', '')
-}
+
+const c = 170
+const d = ~170
+console.log(c)
+console.log(d)

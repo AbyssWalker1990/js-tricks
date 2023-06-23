@@ -1,0 +1,375 @@
+AND ( & )
+OR ( | )
+XOR ( ^ )
+NOT ( ~ )
+LEFT SHIFT ( << )
+RIGHT SHIFT ( >> )
+ZERO-FILL RIGHT SHIFT ( >>> )
+
+The JavaScript Bitwise NOT (~) operator:
+    // 170 => 00000000000000000000000010101010
+    // --------------------------------------
+    //  ~ 00000000000000000000000010101010
+    // --------------------------------------
+    //  = 11111111111111111111111101010101
+    // --------------------------------------
+    //  = -171 (decimal)
+
+    console.log(~170); // -171
+
+Integer Tip:
+The most significant (leftmost) bit is called the sign bit. The sign bit is always 0 for positive 
+integers, and 1 for negative integers
+The remaining 31 bits besides the sign bit are used to represent the integer. Therefore, the maximum
+ 32-bit integer that can be represented is (2^31 - 1), which is 2147483647, while the minimum integer is -(2^31), which is -2147483648
+
+It can be useful with methods that return -1 if sisnt find anything, like indexOf()
+we can cast it in Boolean:
+    // Boolean(~arr.indexOf(5)) and it will be true or false
+
+---------------------------------------------------
+The JavaScript Bitwise AND (&) operator:
+
+(0 & 0) === 0     // 0 x 0 = 0
+(0 & 1) === 0     // 0 x 1 = 0
+(1 & 0) === 0     // 1 x 0 = 0
+(1 & 1) === 1     // 1 x 1 = 1
+
+When would you use the bitwise AND operator?
+Turning off bits: 
+    (A & 0 = 0) – the bit is always turned off by a corresponding 0 bit
+    (A & 1 = A) – the bit remains unchanged when paired with a corresponding 1 bit
+
+    const mask = 0b11110000;// 222 => 11011110// (222 & mask)
+    // ------------
+    //   11011110
+    // & 11110000
+    // ------------
+    // = 11010000
+    // ------------
+    // = 208 (decimal)console.log(222 & mask); // 208
+
+Checking for set bits:
+    // const mask = 0b10000;
+    // 34 => 100010
+    // (34 & mask) => (100010 & 010000) = 000000
+    console.log((34 & mask) === mask); // false// 50 => 110010
+    // (50 & mask) => (110010 & 010000) = 010000
+    console.log((50 & mask) === mask); // true
+    Note that the 0 bits in the bit mask will effectively turn off the corresponding bits in the decimal number, because A & 0 = 0:
+
+Even or odd: 
+    If the least significant bit is turned on (set to 1), the number is odd; 
+    otherwise, the number is even:
+
+    function isOdd (int) {
+    return (int & 1) === 1;
+    }
+
+    function isEven (int) {
+    return (int & 1) === 0;
+    }
+
+    console.log(isOdd(34)); // false
+    console.log(isOdd(-63)); // true
+    console.log(isEven(-12)); // true
+    console.log(isEven(199)); // false
+
+Useful Identitites:
+(A & 0) === 0
+(A & ~A) === 0
+(A & A) === A
+(A & -1) === A
+
+-------------------------------------------------
+
+The JavaScript Bitwise OR (|) operator: 
+
+(0 | 0) === 0
+(0 | 1) === 1
+(1 | 0) === 1
+(1 | 1) === 1
+
+When would you use the bitwise OR operator?
+Turning on bits:
+    (A | 0 = A) — The bit remains unchanged when paired with a corresponding 0 bit
+    (A | 1 = 1) — The bit is always turned on by a corresponding 1 bit
+
+    const mask = 0b10101010;// 208 => 11010000// (208 | mask)
+    // ------------
+    //   11010000
+    // | 10101010
+    // ------------
+    // = 11111010
+    // ------------
+    // = 250 (decimal)console.log(208 | mask); // 250
+
+Useful identities:
+
+(A | 0) === A
+(A | ~A) === -1
+(A | A) === A
+(A | -1) === -1
+
+---------------------------------------------------
+
+The Bitwise XOR (^) operator:
+
+(0 ^ 0) === 0
+(0 ^ 1) === 1
+(1 ^ 0) === 1
+(1 ^ 1) === 0
+
+When would you use the bitwise XOR operator?
+Toggling bits:
+
+    The bit remains unchanged when paired with a corresponding 0 bit, e.g., (A ^ 0 = A)
+    The bit is always toggled when paired with a corresponding 1 bit:
+    (A ^ 1 = 1) — if A is 0
+    (A ^ 1 = 0) — if A is 1
+
+    // const mask = 0b01111110;// 208 => 11010000// (208 ^ mask)
+    // ------------
+    //   11010000
+    // ^ 01111110
+    // ------------
+    // = 10101110
+    // ------------
+    // = 174 (decimal)console.log(208 ^ mask); // 174
+
+Useful identities:
+    (A ^ 0) === A
+    (A ^ ~A) === -1
+    (A ^ A) === 0
+    (A ^ -1) === ~A
+
+---------------------------------------------
+
+The JavaScript left shift (<<) operator:
+
+// 170 => 00000000000000000000000010101010
+
+// 170 << 3
+// --------------------------------------------
+//    (000)00000000000000000000010101010(***)
+// --------------------------------------------
+//  = (***)00000000000000000000010101010(000)
+// --------------------------------------------
+//  = 00000000000000000000010101010000
+// --------------------------------------------
+//  = 1360 (decimal)
+
+console.log(170 << 3); // 1360
+(170 << 3) => 170 * (2 ** 3) => 170 * 8 => 1360
+
+When would you use the left shift operator?
+Color conversion: RGB to hex:
+
+The color value for each component of an RGB color is between 0 - 255. 
+Simply put, each color value can be represented perfectly by 8 bits:
+
+  0 => 0b00000000 (binary) => 0x00 (hexadecimal)
+255 => 0b11111111 (binary) => 0xff (hexadecimal)
+
+(binary) => 11111111 00100011 00010100
+
+   (red) => 11111111 => ff => 255
+ (green) => 00100011 => 23 => 35
+  (blue) => 00010100 => 14 => 20
+
+   (hex) => ff2314
+
+Let’s say we have a color represented by rgb(255, 35, 20). 
+Here is how we can compose the bits:
+
+  (red) => 255 => 00000000 00000000 00000000 11111111
+(green) =>  35 => 00000000 00000000 00000000 00100011
+ (blue) =>  20 => 00000000 00000000 00000000 00010100
+
+// Rearrange the component bits and pad with zeroes as necessary
+// Use the left shift operator
+
+  (red << 16) => 00000000 11111111 00000000 00000000
+ (green << 8) => 00000000 00000000 00100011 00000000
+       (blue) => 00000000 00000000 00000000 00010100
+
+// Combine the component bits together using the OR (|) operator
+// ( red << 16 | green << 8 | blue )
+
+      00000000 11111111 00000000 00000000
+    | 00000000 00000000 00100011 00000000
+    | 00000000 00000000 00000000 00010100
+// -----------------------------------------
+      00000000 11111111 00100011 00010100
+// -----------------------------------------
+
+function rgbToHex ([red = 0, green = 0, blue = 0] = []) {
+  return `#${(red << 16 | green << 8 | blue).toString(16)}`;
+} 
+
+OR
+
+function getHexCode(rgbColorCode) {
+    var [red, green, blue] = rgbColorCode
+
+    if (!(red << 16 | green << 8 | blue)) {
+        return "#000000"
+    }
+
+    return `#${(red << 16 | green << 8 | blue).toString(16)}`;
+}
+
+----------------------------------------------
+The JavaScript sign-propagating right shift operator:
+
+//  170 => 00000000000000000000000010101010
+// -170 => 11111111111111111111111101010110
+
+// 170 >> 3
+// --------------------------------------------
+//    (***)00000000000000000000000010101(010)
+// --------------------------------------------
+//  = (000)00000000000000000000000010101(***)
+// --------------------------------------------
+//  = 00000000000000000000000000010101
+// --------------------------------------------
+//  = 21 (decimal)
+
+// -170 >> 3
+// --------------------------------------------
+//    (***)11111111111111111111111101010(110)
+// --------------------------------------------
+//  = (111)11111111111111111111111101010(***)
+// --------------------------------------------
+//  = 11111111111111111111111111101010
+// --------------------------------------------
+//  = -22 (decimal)
+
+console.log(170 >> 3); // 21
+console.log(-170 >> 3); // -22
+
+(170 >> 3) => Math.floor(170 / (2 ** 3)) => Math.floor(170 / 8) => 21
+(-170 >> 3) => Math.floor(-170 / (2 ** 3)) => Math.floor(-170 / 8) => -22
+
+!!!! the sign of the integer is always preserved !!!!
+
+Use cases for the sign-propagating right shift operator:
+Color extraction:
+    Let’s say we have a color represented by the hexadecimal notation #ff2314. Here is the signed 32-bit representation of the color:
+
+(color) => ff2314 (hexadecimal) => 11111111 00100011 00010100 (binary)
+
+// 32-bit representation of color
+00000000 11111111 00100011 00010100
+
+color => 00000000 11111111 00100011 00010100
+
+// Right shift the color bits by multiples of 8
+// Until the target component bits are the first 8 bits from the right
+
+  red => color >> 16
+      => 00000000 11111111 00100011 00010100 >> 16
+      => 00000000 00000000 00000000 11111111
+
+green => color >> 8
+      => 00000000 11111111 00100011 00010100 >> 8
+      => 00000000 00000000 11111111 00100011
+
+ blue => color >> 0 => color
+      => 00000000 11111111 00100011 00010100
+
+Now we must use & operator to get rid of 9+ bits
+mask => 00000000 00000000 00000000 11111111
+     => 0b11111111 (binary)
+     => 0xff (hexadecimal)
+
+  red => color >> 16 & 0xff
+      =>   00000000 00000000 00000000 11111111
+      => & 00000000 00000000 00000000 11111111
+      => = 00000000 00000000 00000000 11111111
+      =>   255 (decimal)
+
+green => color >> 8 & 0xff
+      =>   00000000 00000000 11111111 00100011
+      => & 00000000 00000000 00000000 11111111
+      => = 00000000 00000000 00000000 00100011
+      =>   35 (decimal)
+
+ blue => color & 0xff
+      =>   00000000 11111111 00100011 00010100
+      => & 00000000 00000000 00000000 11111111
+      => = 00000000 00000000 00000000 00010100
+      =>   20 (decimal)
+
+function hexToRgb (hex) {
+  hex = hex.replace(/^#?([0-9a-f]{6})$/i, '$1');
+  hex = Number(`0x${hex}`);
+
+  return [
+    hex >> 16 & 0xff, // red
+    hex >> 8 & 0xff,  // green
+    hex & 0xff        // blue
+  ];
+}
+
+function hexToRgb (hex) {
+    hex = hex.replace(/^#?([0-9a-f]{6})$/i, '$1');
+    hex = Number(`0x${hex}`);
+
+    return [
+        hex >> 16 & 0xff, // red
+        hex >> 8 & 0xff,  // green
+        hex & 0xff        // blue
+    ];
+}
+
+--------------------------------------------
+The JavaScript zero-fill right shift (>>>) operator
+//  170 => 00000000000000000000000010101010
+// -170 => 11111111111111111111111101010110
+
+// 170 >>> 3
+// --------------------------------------------
+//    (***)00000000000000000000000010101(010)
+// --------------------------------------------
+//  = (000)00000000000000000000000010101(***)
+// --------------------------------------------
+//  = 00000000000000000000000000010101
+// --------------------------------------------
+//  = 21 (decimal)
+
+// -170 >>> 3
+// --------------------------------------------
+//    (***)11111111111111111111111101010(110)
+// --------------------------------------------
+//  = (000)11111111111111111111111101010(***)
+// --------------------------------------------
+//  = 00011111111111111111111111101010
+// --------------------------------------------
+//  = 536870890 (decimal)
+
+console.log(170 >>> 3); // 21
+console.log(-170 >>> 3); // 536870890
+-------------------------------------
+Config flags:
+const LIST_FRACTION = 0x1; // (001)
+const LIST_UNIQUE = 0x2;   // (010)
+const LIST_SORTED = 0x4;   // (100)
+
+const LIST_ALL = LIST_FRACTION | LIST_UNIQUE | LIST_SORTED; // (111)
+const LIST_DEFAULT = LIST_ALL ^ LIST_UNIQUE; // (101)
+
+function normalizeList (list, flag = LIST_DEFAULT) {
+  if (flag & LIST_FRACTION) {
+    const max = Math.max(...list);
+    list = list.map(value => Number((value / max).toFixed(2)));
+  }
+  if (flag & LIST_UNIQUE) {
+    list = [...new Set(list)];
+  }
+  if (flag & LIST_SORTED) {
+    list = list.sort((a, b) => a - b);
+  }
+  return list;
+}
+
