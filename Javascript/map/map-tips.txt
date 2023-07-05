@@ -20,3 +20,20 @@ Every map.set call returns the map itself, so we can “chain” the calls:
 The insertion order is used
     The iteration goes in the same order as the values were inserted. Map preserves this order, 
     unlike a regular Object.
+
+------------------------------------------
+
+WeakMap
+    The first difference between Map and WeakMap is that keys must be objects,
+    not primitive values:
+
+    let weakMap = new WeakMap();
+    let obj = {};
+
+    weakMap.set(obj, "ok"); // works fine (object key)
+
+    // can't use a string as the key
+    weakMap.set("test", "Whoops"); // Error, because "test" is not an object
+
+WeakMap does not support iteration and methods keys(), values(), entries(), 
+so there’s no way to get all keys or values from it.

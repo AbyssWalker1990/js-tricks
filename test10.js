@@ -1,10 +1,15 @@
-const a = 0b11111111
-const b = ~a
-console.log(a)
-console.log(b)
+function aclean (arr) {
+  let map = new Map();
 
+  for (let word of arr) {
+    // split the word by letters, sort them and join back
+    let sorted = word.toLowerCase().split('').sort().join(''); // (*)
+    map.set(sorted, word);
+  }
 
-const c = 170
-const d = ~170
-console.log(c)
-console.log(d)
+  return Array.from(map.values());
+}
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+console.log(aclean(arr));
