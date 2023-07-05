@@ -1,0 +1,7 @@
+Iterables and array-likes:
+Two official terms look similar, but are very different. Please make sure you understand them 
+well to avoid the confusion.
+
+Iterables are objects that implement the Symbol.iterator method, as described above.
+Array-likes are objects that have indexes and length, so they look like arrays.
+-----------------------------------------------------------------

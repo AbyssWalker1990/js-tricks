@@ -373,3 +373,10 @@ function normalizeList (list, flag = LIST_DEFAULT) {
   return list;
 }
 
+DEMO:
+// Checking if the unique option is activated
+// (flag & LIST_UNIQUE) === LIST_UNIQUE (activated)
+// (flag & LIST_UNIQUE) === 0 (deactivated)
+
+flag & LIST_UNIQUE
+
