@@ -1,0 +1,1 @@
+Factory function - function that return object
